@@ -5,6 +5,7 @@
     <dimen name="activity_main_vertical_margin">8dp</dimen>
     <dimen name="activity_horizontal_margin">8dp</dimen>
     <dimen name="activity_vertical_margin">4dp</dimen>
+    <dimen name="appbar_height">96dp</dimen>
 
     <!-- Material -->
     <dimen name="material_xsmall">2dp</dimen>

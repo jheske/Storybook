@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/gettingStartedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/getting_started"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/helperClassesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/helper_classes"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gettingStartedButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/surfacesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/surfaces"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/helperClassesButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/alertsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/alerts"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/surfacesButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/contentButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/content"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/alertsButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inputsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/inputs"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contentButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/navigationButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/navigation"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputsButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/progressButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/progress"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navigationButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

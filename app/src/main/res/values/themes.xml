@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Storybook" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Storybook" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!-- Secondary brand color. -->
@@ -9,5 +9,123 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <!-- Default and Derived Text Appearances -->
+    <style name="Theme.Storybook.TextAppearance.Caption" parent="">
+        <item name="android:textSize">@dimen/text_xxsmall</item>\
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Title" parent="">
+        <item name="android:textSize">@dimen/text_title_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Title.Black" parent="Theme.Storybook.TextAppearance.Title">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Caption.White" parent="Theme.Storybook.TextAppearance.Caption">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body1" parent="">
+        <item name="android:textSize">@dimen/text_small</item>\
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body1.White" parent="Theme.Storybook.TextAppearance.Body1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body1.Black" parent="Theme.Storybook.TextAppearance.Body1">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body1.Bold" parent="Theme.Storybook.TextAppearance.Body1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body1.White.Bold" parent="Theme.Storybook.TextAppearance.Body1.White">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body2" parent="">
+        <item name="android:textSize">@dimen/text_xsmall</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Body2.White" parent="Theme.Storybook.TextAppearance.Body2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline1" parent="">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline1.Bold" parent="Theme.Storybook.TextAppearance.Headline1">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline1.Black" parent="Theme.Storybook.TextAppearance.Headline1">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline1.White" parent="Theme.Storybook.TextAppearance.Headline1">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline2" parent="">
+        <item name="android:textSize">@dimen/text_medium</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline3" parent="">
+        <item name="android:textSize">@dimen/text_headline3</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline2.Black" parent="Theme.Storybook.TextAppearance.Headline2">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline2.Bold" parent="Theme.Storybook.TextAppearance.Headline2">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline2.White" parent="Theme.Storybook.TextAppearance.Headline2">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline2.Blue" parent="Theme.Storybook.TextAppearance.Headline2">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.Storybook.TextAppearance.Headline2.Blue.Bold" parent="Theme.Storybook.TextAppearance.Headline2.Blue">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Theme.Storybook.TextTitleSmall">
+        <item name="android:textSize">@dimen/text_title_small</item>
+    </style>
+
+    <style name="Theme.Storybook.TextTitleSmall.Bold" parent="Theme.Storybook.TextTitleSmall">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextTitleLarge">
+        <item name="android:textSize">@dimen/text_title_large</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Theme.Storybook.TextTitle_Extra_Large">
+        <item name="android:textSize">@dimen/text_title_xlarge</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <!-- Components -->
+
+    <style name="Theme.Storybook.MenuButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/text_large</item>
     </style>
 </resources>

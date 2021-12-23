@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/material_xlarge"
+    tools:context=".ui.MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/button"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/checkboxButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/checkbox"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dropdownButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/dropdown"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkboxButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/inputButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/input"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dropdownButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/phoneputButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/phoneput"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pinputButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/pinput"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/phoneputButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/radioButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/radio"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pinputButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/toggleSwitchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/toggle_switch"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radioButton" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/textareaButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/material_xlarge"
+        android:layout_marginTop="@dimen/material_large"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/text_area"
+        style="@style/Theme.Storybook.MenuButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toggleSwitchButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
