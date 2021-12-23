@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Storybook</string>
+    <string name="getting_started">Getting Started</string>
+    <string name="helper_classes">Helper Classes</string>
+    <string name="surfaces">Surfaces</string>
+    <string name="alerts">Alerts</string>
+    <string name="content">Content</string>
+    <string name="inputs">Inputs</string>
+    <string name="navigation">Navigation</string>
+    <string name="progress">Progress</string>
+</resources>
