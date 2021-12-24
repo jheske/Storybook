@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.compose.storybook.databinding.FragmentInputsBinding
 import com.example.compose.storybook.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +33,7 @@ class InputsFragment: Fragment() {
 
     fun setupClickListeners() {
         binding.buttonButton.setOnClickListener {
-
+            findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToButtonsFragment())
         }
         binding.checkboxButton.setOnClickListener {
 

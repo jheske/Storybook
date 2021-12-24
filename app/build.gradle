@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
 }
@@ -44,17 +43,30 @@ android {
 
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.4.32'    }
-
+        kotlinCompilerVersion '1.4.32'
+    }
 }
 
 dependencies {
     // Kotlin
     implementation 'androidx.core:core-ktx:1.7.0'
 
+    // WARNING: Be careful when upgrading kotlin_version, compose_version,
+    // or compose_runtime_version. It can be difficult to get them in sync.
+
     // Compose
-    def compose_version = "1.0.0-beta08"
-    implementation("androidx.compose.runtime:runtime:$compose_version")
+    implementation("androidx.compose.runtime:runtime:$compose_runtime_version")
+    implementation "androidx.activity:activity-compose:1.4.0"
+    implementation 'androidx.compose.material:material:1.0.5'
+    implementation 'androidx.compose.animation:animation:1.0.5'
+    implementation 'androidx.compose.ui:ui-tooling:1.0.5'  // Previews, etc.
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0'
+    // Use these last two libs if you want Compose to inherit the themes available
+    // in the View system instead of rewriting your own Material theme in Compose from scratch.
+    //   When using a MDC theme
+    implementation "com.google.android.material:compose-theme-adapter:1.1.2"
+    //   When using an AppCompat theme
+    implementation "com.google.accompanist:accompanist-appcompat-theme:0.16.0"
 
     // UI
     implementation "androidx.appcompat:appcompat:$appcompat_version"

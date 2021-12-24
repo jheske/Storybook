@@ -9,7 +9,6 @@ import androidx.navigation.ui.NavigationUI
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_main.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -41,13 +40,6 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(navGraph = navController.graph)
-        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration)
-
-
-        //        val navHostFragment =
-//            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-//        navController = navHostFragment.navController
-
-
+        NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration)
     }
 }

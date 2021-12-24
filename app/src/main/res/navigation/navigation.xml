@@ -16,5 +16,13 @@
     <fragment
         android:id="@+id/inputsFragment"
         android:name="com.example.compose.storybook.ui.InputsFragment"
-        tools:layout="@layout/fragment_inputs"/>
+        tools:layout="@layout/fragment_inputs">
+        <action
+            android:id="@+id/action_inputsFragment_to_buttonsFragment"
+            app:destination="@id/buttonsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/buttonsFragment"
+        android:name="com.example.compose.storybook.ui.ButtonsFragment" />
 </navigation>
