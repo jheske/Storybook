@@ -21,4 +21,7 @@
     <string name="toggle_switch">Switch</string>  <!-- "switch" seems to be a reserved word -->
     <string name="text_area">Textarea</string>
 
+    <!-- Compose Components -->
+    <string name="compose_button">Compose Button</string>
+
 </resources>

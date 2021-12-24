@@ -8,23 +8,20 @@ import android.view.LayoutInflater
 import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -33,6 +30,7 @@ import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentButtonBinding
 import com.example.compose.storybook.ui.AppBaseFragment
 import com.example.compose.storybook.ui.MainActivity
+import com.example.udemy.compose.firstapp.ui.theme.StorybookTheme
 import com.google.android.material.composethemeadapter.MdcTheme
 
 class ButtonFragment : AppBaseFragment() {
@@ -51,17 +49,17 @@ class ButtonFragment : AppBaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val greeting = binding.greeting
+        val greeting = binding.composeButton
 
         greeting.setContent {
-            MdcTheme { // or AppCompatTheme
+            StorybookTheme { // or AppCompatTheme or CustomTheme
                 //Greeting()
                 CustomButton(
                     onClick = {
                         Toast.makeText(requireContext(), "Button!", Toast.LENGTH_LONG).show()
                     },
                     shape = RoundedCornerShape(20.dp),
-                    text = "Button!",
+                    text = stringResource(id = R.string.compose_button),
                 )
             }
         }
@@ -88,19 +86,12 @@ private fun CustomButton(
         modifier = modifier,
         enabled = enabled,
         shape = shape,
+        contentPadding = PaddingValues(
+            horizontal = dimensionResource(id = R.dimen.compose_button_padding_horizontal),
+            vertical = dimensionResource(id = R.dimen.compose_button_padding_vertical)
+        )
     ) {
-        Text(text = "This is a button!")
+        Text(text = text)
     }
 }
 
-@Composable
-private fun Greeting() {
-    Text(
-        text = stringResource(R.string.app_name),
-        style = MaterialTheme.typography.h5,
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = dimensionResource(R.dimen.material_small))
-            .wrapContentWidth(Alignment.CenterHorizontally)
-    )
-}

@@ -41,4 +41,9 @@
     <!-- Button -->
     <dimen name="menu_button_corners">32dp</dimen>
     <dimen name="menu_button_padding">10dp</dimen>
+
+    <!-- Compose Components -->
+    <dimen name="compose_button_padding_horizontal">20dp</dimen>
+    <dimen name="compose_button_padding_vertical">12dp</dimen>
+
 </resources>

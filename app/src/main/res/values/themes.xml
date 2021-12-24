@@ -121,7 +121,7 @@
     </style>
 
 
-    <!-- Components -->
+    <!-- Material Components -->
 
     <style name="Theme.Storybook.MenuButton" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/bg_menu_button</item>
