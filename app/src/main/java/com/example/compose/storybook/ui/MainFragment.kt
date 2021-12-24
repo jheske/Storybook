@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainer
 import androidx.navigation.fragment.findNavController
+import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainFragment : Fragment() {
+class MainFragment : AppBaseFragment() {
 
     lateinit var binding: FragmentMainBinding
 
@@ -28,6 +30,10 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupClickListeners()
+    }
+
+    override fun setupAppBar(showAppTitleAndIcon: Boolean, title: String) {
+        (requireActivity() as MainActivity).showAppTitleAndIcon()
     }
 
     private fun setupClickListeners() {

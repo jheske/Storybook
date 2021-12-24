@@ -39,5 +39,6 @@
     <dimen name="button_text_size">18sp</dimen>
 
     <!-- Button -->
+    <dimen name="menu_button_corners">32dp</dimen>
     <dimen name="menu_button_padding">10dp</dimen>
 </resources>

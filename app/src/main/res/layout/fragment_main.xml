@@ -7,11 +7,11 @@
     tools:context=".ui.MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/gettingStartedButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/getting_started"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,12 +19,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/helperClassesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/helper_classes"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,12 +32,12 @@
         app:layout_constraintTop_toBottomOf="@id/gettingStartedButton" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/surfacesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/surfaces"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,12 +45,12 @@
         app:layout_constraintTop_toBottomOf="@id/helperClassesButton" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/alertsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/alerts"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,12 +58,12 @@
         app:layout_constraintTop_toBottomOf="@id/surfacesButton" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/contentButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/content"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,7 +76,6 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/inputs"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -84,12 +83,12 @@
         app:layout_constraintTop_toBottomOf="@id/contentButton" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/navigationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/navigation"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,12 +96,12 @@
         app:layout_constraintTop_toBottomOf="@id/inputsButton" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:enabled="false"
         android:id="@+id/progressButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:background="@drawable/bg_menu_button"
         android:text="@string/progress"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"

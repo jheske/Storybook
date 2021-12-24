@@ -2,6 +2,7 @@ package com.example.compose.storybook.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -29,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         setupNavigation()
     }
 
-
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp()
@@ -41,5 +41,18 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
         val appBarConfiguration = AppBarConfiguration(navGraph = navController.graph)
         NavigationUI.setupWithNavController(binding.toolbar, navController, appBarConfiguration)
+    }
+
+    fun showAppTitleAndIcon(show: Boolean = true, title: String="") {
+        if (show) {
+            binding.titleTextView.visibility = View.VISIBLE
+            binding.appLogoImageView.visibility = View.VISIBLE
+        } else {
+            binding.titleTextView.visibility = View.GONE
+            binding.appLogoImageView.visibility = View.GONE
+        }
+        // This is the Navigation toolbar title that shows up next to the Up button
+        // on inner pages.
+        binding.toolbar.title = title
     }
 }
