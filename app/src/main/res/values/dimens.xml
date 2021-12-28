@@ -45,5 +45,6 @@
     <!-- Compose Components -->
     <dimen name="compose_button_padding_horizontal">20dp</dimen>
     <dimen name="compose_button_padding_vertical">12dp</dimen>
+    <dimen name="compose_checkbox_size">32dp</dimen>
 
 </resources>

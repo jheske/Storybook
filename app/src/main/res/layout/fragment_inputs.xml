@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/material_xlarge"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:enabled="true"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:enabled="false"
+        android:enabled="true"
         android:id="@+id/checkboxButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

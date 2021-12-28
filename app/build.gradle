@@ -42,17 +42,17 @@ android {
     }
 
     composeOptions {
+
+        // WARNING: Be careful when upgrading kotlin_version, compose_version,
+        // or compose_runtime_version. It can be difficult to get them in sync.
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.4.32'
+        kotlinCompilerVersion kotlin_version
     }
 }
 
 dependencies {
     // Kotlin
     implementation 'androidx.core:core-ktx:1.7.0'
-
-    // WARNING: Be careful when upgrading kotlin_version, compose_version,
-    // or compose_runtime_version. It can be difficult to get them in sync.
 
     // Compose
     implementation("androidx.compose.runtime:runtime:$compose_runtime_version")
@@ -90,7 +90,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extension_version"
 
-    // Libs required for new startActivityForResult (old method is deprecated)
+    // Libs for "by viewModels<>()" and new startActivityForResult (old method is deprecated)
     implementation "androidx.activity:activity-ktx:1.4.0"
     implementation "androidx.fragment:fragment-ktx:1.4.0"
 

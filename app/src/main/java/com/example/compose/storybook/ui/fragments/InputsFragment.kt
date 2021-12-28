@@ -1,15 +1,14 @@
-package com.example.compose.storybook.ui.inputs
+package com.example.compose.storybook.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentInputsBinding
 import com.example.compose.storybook.ui.AppBaseFragment
-import com.example.compose.storybook.ui.MainActivity
+import com.example.compose.storybook.ui.activities.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,7 +44,7 @@ class InputsFragment : AppBaseFragment() {
             findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToButtonFragment())
         }
         binding.checkboxButton.setOnClickListener {
-
+            findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToCheckboxFragment())
         }
         binding.dropdownButton.setOnClickListener {
 

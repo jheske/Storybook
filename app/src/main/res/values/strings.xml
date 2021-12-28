@@ -23,5 +23,13 @@
 
     <!-- Compose Components -->
     <string name="compose_button">Compose Button</string>
+    <string name="compose_checkbox">Compose Checkbox</string>
+    <string name="compose_dropdown">Compose Dropdown</string>
+    <string name="compose_input">Compose TextInput</string>
+    <string name="compose_phoneput">Compose Pinput (TextInput - Phone)</string>
+    <string name="compose_pinput">Compose Pinput (TextInput - PIN)</string>
+    <string name="compose_radio">Compose Radio</string>
+    <string name="compose_switch">Compose Switch</string>
+    <string name="compose_textarea">Compose Textarea (multiline Text)</string>
 
 </resources>

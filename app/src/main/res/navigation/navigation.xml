@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.compose.storybook.ui.MainFragment"
+        android:name="com.example.compose.storybook.ui.activities.MainFragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_inputsFragment"
@@ -16,15 +16,21 @@
 
     <fragment
         android:id="@+id/inputsFragment"
-        android:name="com.example.compose.storybook.ui.inputs.InputsFragment"
+        android:name="com.example.compose.storybook.ui.fragments.InputsFragment"
         tools:layout="@layout/fragment_inputs">
         <action
             android:id="@+id/action_inputsFragment_to_buttonFragment"
             app:destination="@id/buttonFragment" />
+        <action
+            android:id="@+id/action_inputsFragment_to_checkboxFragment"
+            app:destination="@id/checkboxFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/buttonFragment"
-        android:name="com.example.compose.storybook.ui.inputs.ButtonFragment"
-        android:label="@string/button"/>
+        android:name="com.example.compose.storybook.ui.fragments.ButtonFragment"/>
+
+    <fragment
+        android:id="@+id/checkboxFragment"
+        android:name="com.example.compose.storybook.ui.fragments.CheckboxFragment" />
 </navigation>
