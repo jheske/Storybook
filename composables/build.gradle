@@ -1,0 +1,67 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 24
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+    buildFeatures {
+        // Enable Jetpack Compose for this module
+        compose true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    composeOptions {
+
+        // WARNING: Be careful when upgrading kotlin_version, compose_version,
+        // or compose_runtime_version. It can be difficult to get them in sync.
+        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerVersion kotlin_version
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    // Kotlin
+    implementation "androidx.core:core-ktx:$kotlin_core_version"
+
+    // Compose
+    implementation("androidx.compose.runtime:runtime:$compose_runtime_version")
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
+    implementation "androidx.compose.material:material:$compose_material_version"
+    implementation "androidx.compose.animation:animation:$compose_material_version"
+    implementation "androidx.compose.ui:ui-tooling:$compose_material_version"  // Previews, etc.
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_compose_version"
+    // Use these last two libs if you want Compose to inherit the themes available
+    // in the View system instead of rewriting your own Material theme in Compose from scratch.
+    //  MDC theme
+    //    implementation "com.google.android.material:compose-theme-adapter:1.1.2"
+    //  AppCompat theme
+    //    implementation "com.google.accompanist:accompanist-appcompat-theme:0.16.0"
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}

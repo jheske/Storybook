@@ -1,4 +1,4 @@
-package com.example.compose.storybook.ui.activities
+package com.example.compose.storybook.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.compose.storybook.databinding.FragmentMainBinding
 import com.example.compose.storybook.ui.AppBaseFragment
+import com.example.compose.storybook.ui.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,6 +33,10 @@ class MainFragment : AppBaseFragment() {
 
     override fun setupAppBar(showAppTitleAndIcon: Boolean, title: String) {
         (requireActivity() as MainActivity).showAppTitleAndIcon()
+    }
+
+    override fun setupObservers() {
+        /** NO OP **/
     }
 
     private fun setupClickListeners() {

@@ -1,4 +1,4 @@
-package com.example.compose.storybook.ui.activities
+package com.example.compose.storybook.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

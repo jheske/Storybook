@@ -51,22 +51,25 @@ android {
 }
 
 dependencies {
+    implementation project(':composables')
+
     // Kotlin
-    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation "androidx.core:core-ktx:$kotlin_core_version"
 
     // Compose
-    implementation("androidx.compose.runtime:runtime:$compose_runtime_version")
-    implementation "androidx.activity:activity-compose:1.4.0"
-    implementation 'androidx.compose.material:material:1.0.5'
-    implementation 'androidx.compose.animation:animation:1.0.5'
-    implementation 'androidx.compose.ui:ui-tooling:1.0.5'  // Previews, etc.
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0'
+    implementation "androidx.compose.runtime:runtime:$compose_runtime_version"
+    implementation "androidx.compose.runtime:runtime-livedata:1.1.0-rc01"
+    implementation "androidx.activity:activity-compose:$activity_compose_version"
+    implementation "androidx.compose.material:material:$compose_material_version"
+    implementation "androidx.compose.animation:animation:$compose_material_version"
+    implementation "androidx.compose.ui:ui-tooling:$compose_material_version"  // Previews, etc.
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_compose_version"
     // Use these last two libs if you want Compose to inherit the themes available
     // in the View system instead of rewriting your own Material theme in Compose from scratch.
-    //   When using a MDC theme
-    implementation "com.google.android.material:compose-theme-adapter:1.1.2"
-    //   When using an AppCompat theme
-    implementation "com.google.accompanist:accompanist-appcompat-theme:0.16.0"
+    //   MDC theme
+    // implementation "com.google.android.material:compose-theme-adapter:1.1.2"
+    //   AppCompat theme
+    // implementation "com.google.accompanist:accompanist-appcompat-theme:0.16.0"
 
     // UI
     implementation "androidx.appcompat:appcompat:$appcompat_version"
@@ -82,8 +85,8 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$dagger_hilt_lifecycle_version"
 
     // Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     //Lifecycle / ViewModels
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
@@ -91,8 +94,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extension_version"
 
     // Libs for "by viewModels<>()" and new startActivityForResult (old method is deprecated)
-    implementation "androidx.activity:activity-ktx:1.4.0"
-    implementation "androidx.fragment:fragment-ktx:1.4.0"
+    implementation "androidx.activity:activity-ktx:$activity_ktx_version"
+    implementation "androidx.fragment:fragment-ktx:$activity_ktx_version"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

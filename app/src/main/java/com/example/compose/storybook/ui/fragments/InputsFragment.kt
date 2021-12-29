@@ -8,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentInputsBinding
 import com.example.compose.storybook.ui.AppBaseFragment
-import com.example.compose.storybook.ui.activities.MainActivity
+import com.example.compose.storybook.ui.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -37,6 +37,10 @@ class InputsFragment : AppBaseFragment() {
             false,
             getString(R.string.inputs)
         )
+    }
+
+    override fun setupObservers() {
+        /** NO OP **/
     }
 
     private fun setupClickListeners() {

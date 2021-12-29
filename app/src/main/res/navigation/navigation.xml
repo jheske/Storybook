@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.compose.storybook.ui.activities.MainFragment"
+        android:name="com.example.compose.storybook.ui.fragments.MainFragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_inputsFragment"

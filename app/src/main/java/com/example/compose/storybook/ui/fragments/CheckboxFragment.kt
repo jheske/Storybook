@@ -4,18 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.layout.*
-import androidx.compose.material.*
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
+import android.widget.Toast
+import androidx.compose.runtime.livedata.observeAsState
+import androidx.lifecycle.liveData
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentCheckboxBinding
 import com.example.compose.storybook.ui.AppBaseFragment
-import com.example.compose.storybook.ui.activities.MainActivity
+import com.example.compose.storybook.ui.MainActivity
+import com.example.compose.ui.components.CustomLabeledCheckbox
 import com.example.udemy.compose.firstapp.ui.theme.StorybookTheme
+import dagger.hilt.android.AndroidEntryPoint
+import androidx.compose.runtime.getValue
 
+@AndroidEntryPoint
 class CheckboxFragment : AppBaseFragment() {
     lateinit var binding: FragmentCheckboxBinding
 
@@ -32,12 +33,26 @@ class CheckboxFragment : AppBaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val greeting = binding.composeCheckboxWithLabel
+        val checkboxWithLabel = binding.composeCheckboxWithLabel
 
-        greeting.setContent {
+        checkboxWithLabel.setContent {
+
             StorybookTheme { // or AppCompatTheme or CustomTheme
-                CustomCheckbox()
+                // !!!!WARNING: You have to manually add
+                //
+                //        import androidx.compose.runtime.getValue
+                //
+                // or observeAsState won't work!!!!
+         //       val isCheckedObservable by viewModel.checkboxIsSelected.observeAsState(false)
+
+                CustomLabeledCheckbox(
+                    checked = false,
+                    onCheckedChange = {
+                        viewModel.checkCustomCheckbox()
+                    }
+                )
             }
+
         }
     }
 
@@ -47,25 +62,20 @@ class CheckboxFragment : AppBaseFragment() {
             getString(R.string.checkbox)
         )
     }
-}
 
-@Composable
-private fun CustomCheckbox(
-) {
-    Row(modifier = Modifier.padding(8.dp)) {
-        //val isChecked = remember { mutableStateOf(false) }
+    override fun setupObservers() {
+        viewModel.onCustomButtonClicked.observe(viewLifecycleOwner, { buttonClicked ->
+            if (buttonClicked) {
+                Toast.makeText(requireContext(), "Button!", Toast.LENGTH_SHORT).show()
+            }
+        })
 
-//        Checkbox(
-//            checked = true,
-//            onCheckedChange = { },
-//            enabled = true,
-//            colors = CheckboxDefaults.colors(Color.Green)
-//        )
-        Text(
-            text = "Check Box with Label",
-            style = MaterialTheme.typography.h4.copy(
-                Color.Black
-            ),)
+        viewModel.onCustomCustomCheckboxChecked.observe(viewLifecycleOwner, { checkboxChecked ->
+            if (checkboxChecked) {
+                Toast.makeText(requireContext(), "Checkbox!", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }
+
 
