@@ -28,28 +28,16 @@ fun CustomSimpleCheckbox() {
  */
 @Composable
 fun CustomLabeledCheckbox(
-    checked: Boolean = true,   // The value when this Component is first created.
+    isChecked: Boolean = true,   // The value when this Component is first created.
     onCheckedChange: (Boolean) -> Unit = {},
 ) {
-    val isChecked = remember { mutableStateOf(checked) }
-
     Row(
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
         Checkbox(
-            checked = isChecked.value,
-            onCheckedChange = { checked ->
-                Log.d("Check::", checked.toString())
-                isChecked.value = checked
-
-                if (checked) {
-                    Log.d("Checkbox","OnCheckedChanged")
-                }
-            },
-//            onCheckedChange = { checked ->
-//                isChecked.value = checked
-//            },
+            checked = isChecked,
+            onCheckedChange = onCheckedChange,
             enabled = true,
             colors = CheckboxDefaults.colors(Color.Green)
         )
@@ -73,7 +61,7 @@ fun CheckboxesPreview() {
             CustomSimpleCheckbox()
             Spacer(modifier = Modifier.height(16.dp))
             CustomLabeledCheckbox(
-                checked = false,
+                //checked = false,
                 onCheckedChange = {}
             )
         }

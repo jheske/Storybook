@@ -36,8 +36,8 @@ class StorybookViewModel : ViewModel() {
      */
     fun checkCustomCheckbox() {
         // LiveDatas are nullable. If null, default to false.
-        val isChecked = _onCustomCheckboxChecked.value ?: false
+        val isChecked = _checkboxIsSelected.value ?: false
 
-        _onCustomCheckboxChecked.value = !isChecked
+        _checkboxIsSelected.value = !isChecked
     }
 }

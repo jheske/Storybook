@@ -6,19 +6,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.lifecycle.liveData
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentCheckboxBinding
 import com.example.compose.storybook.ui.AppBaseFragment
 import com.example.compose.storybook.ui.MainActivity
-import com.example.compose.ui.components.CustomLabeledCheckbox
 import com.example.udemy.compose.firstapp.ui.theme.StorybookTheme
 import dagger.hilt.android.AndroidEntryPoint
 import androidx.compose.runtime.getValue
+// Composables module
+import com.example.compose.ui.components.CustomLabeledCheckbox
+
 
 @AndroidEntryPoint
 class CheckboxFragment : AppBaseFragment() {
     lateinit var binding: FragmentCheckboxBinding
+    lateinit var toast: Toast
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,10 +45,10 @@ class CheckboxFragment : AppBaseFragment() {
                 //        import androidx.compose.runtime.getValue
                 //
                 // or observeAsState won't work!!!!
-         //       val isCheckedObservable by viewModel.checkboxIsSelected.observeAsState(false)
+                val isCheckedObservable by viewModel.checkboxIsSelected.observeAsState(false)
 
                 CustomLabeledCheckbox(
-                    checked = false,
+                    isChecked = isCheckedObservable,
                     onCheckedChange = {
                         viewModel.checkCustomCheckbox()
                     }
@@ -70,9 +72,11 @@ class CheckboxFragment : AppBaseFragment() {
             }
         })
 
-        viewModel.onCustomCustomCheckboxChecked.observe(viewLifecycleOwner, { checkboxChecked ->
+        viewModel.checkboxIsSelected.observe(viewLifecycleOwner, { checkboxChecked ->
             if (checkboxChecked) {
-                Toast.makeText(requireContext(), "Checkbox!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Checkbox is checked!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Checkbox is unchecked!", Toast.LENGTH_SHORT).show()
             }
         })
     }
