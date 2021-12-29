@@ -16,19 +16,31 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 
+/**
+ * This one doesn't use LiveData.
+ * It's useful for testing.
+ */
 @Composable
-fun CustomSimpleCheckbox() {
-    val isChecked = remember { mutableStateOf(false) }
+fun SimpleCheckbox(
+    checked: Boolean = true,
+) {
+    val isChecked = remember { mutableStateOf(checked) }
 
-    Checkbox(checked = isChecked.value, onCheckedChange = { isChecked.value = it })
+    Checkbox(
+        checked = isChecked.value,
+        onCheckedChange = { isChecked.value = it }
+    )
 }
 
 /**
  * Checkbox with Text label to its Right/End
+ *
+ * isChecked is passed in as an observable state so the
+ * Checkbox will recompose when the user clicks it.
  */
 @Composable
-fun CustomLabeledCheckbox(
-    isChecked: Boolean = true,   // The value when this Component is first created.
+fun CustomCheckbox(
+    isChecked: Boolean = true,   // observable state
     onCheckedChange: (Boolean) -> Unit = {},
 ) {
     Row(
@@ -36,12 +48,32 @@ fun CustomLabeledCheckbox(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Checkbox(
-            checked = isChecked,
+            checked = isChecked,  // isChecked is an observable state
             onCheckedChange = onCheckedChange,
             enabled = true,
             colors = CheckboxDefaults.colors(Color.Green)
         )
-        Text(text = "Labeled Check Box")
+    }
+}
+
+@Composable
+fun CustomLabeledCheckbox(
+    isChecked: Boolean = true,   // observable state
+    onCheckedChange: (Boolean) -> Unit = {},
+    text: String = "Label"
+) {
+    Row(
+        horizontalArrangement = Arrangement.Start,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        CustomCheckbox(
+            isChecked = isChecked,  // observable state
+            onCheckedChange = onCheckedChange,
+        )
+        Text(
+            text = text,
+            modifier = Modifier.padding(start = 4.dp)
+        )
     }
 }
 
@@ -58,7 +90,7 @@ fun CheckboxesPreview() {
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.Start
         ) {
-            CustomSimpleCheckbox()
+            CustomCheckbox()
             Spacer(modifier = Modifier.height(16.dp))
             CustomLabeledCheckbox(
                 //checked = false,
