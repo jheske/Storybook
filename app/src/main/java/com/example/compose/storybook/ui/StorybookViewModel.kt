@@ -1,43 +1,73 @@
 package com.example.compose.storybook.ui
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
-import dagger.hilt.android.lifecycle.HiltViewModel
 
 class StorybookViewModel : ViewModel() {
 
     /**
+     * MutableLiveData and LiveData values:
+     *
+     * The ViewModel uses _mutableLiveData vals for values the app wants to store and observe.
+     * Per Google standards, these should be private. Each one serves as a backing value for
+     * a publicly visible liveData value, which any Activity, Fragment, etc. can observe.
+     *
+     * Example:
+     *
      * _onCustomButtonClicked is the private backing value for
      * the public onCustomButtonClicked.
-     * Any Activity, Fragment, etc. can observe onCustomButtonClicked.
-     * and respond to changes (eg., ButtonFragment.setupObservers()).
+     * Any ButtonFragment observes onCustomButtonClicked.
+     * and respond to changes (see ButtonFragment.setupObservers()).
      */
     private val _onCustomButtonClicked = MutableLiveData(false)
     val onCustomButtonClicked = _onCustomButtonClicked
 
-    private val _checkboxIsSelected = MutableLiveData(false)
-    val checkboxIsSelected = _checkboxIsSelected
+    // Checkbox
+    private val _isCustomCheckboxChecked = MutableLiveData(false)
+    val isCustomCheckboxChecked = _isCustomCheckboxChecked
 
-    private val _onCustomCheckboxChecked = MutableLiveData(false)
-    val onCustomCustomCheckboxChecked = _onCustomCheckboxChecked
+    // Labeled Checkbox
+    private val _isCustomLabeledCheckboxChecked = MutableLiveData(false)
+    val isCustomLabeledCheckboxChecked = _isCustomLabeledCheckboxChecked
 
-    val list: LiveData<MutableList<String>> = MutableLiveData(mutableListOf("Ana", "Are", "Mere"))
+    // Switch
+    private val _isCustomSwitchChecked = MutableLiveData(false)
+    val isCustomSwitchChecked = _isCustomSwitchChecked
 
-
-    // ButtonActivity observes _onCustomButtonClicked and calls this function.
+    /**
+     * ButtonActivity observes _onCustomButtonClicked
+     * and calls this function when uses clicks the button.
+     */
     fun clickCustomButton() {
         _onCustomButtonClicked.value = true
     }
 
     /**
-     * Toggle the checkbox.
+     * Toggle the checkbox. All observers will receive the changed
+     * value. Composable observers will recompose.
      */
     fun checkCustomCheckbox() {
         // LiveDatas are nullable. If null, default to false.
-        val isChecked = _checkboxIsSelected.value ?: false
+        val isChecked = _isCustomCheckboxChecked.value ?: false
 
-        _checkboxIsSelected.value = !isChecked
+        _isCustomCheckboxChecked.value = !isChecked
+    }
+
+    fun checkCustomLabeledCheckbox() {
+        // LiveDatas are nullable. If null, default to false.
+        val isChecked = _isCustomLabeledCheckboxChecked.value ?: false
+
+        _isCustomLabeledCheckboxChecked.value = !isChecked
+    }
+
+    /**
+     * Toggle the switch. All observers will receive the changed
+     * value. Composable observers will recompose.
+     */
+    fun checkCustomSwitch() {
+        // LiveDatas are nullable. If null, default to false.
+        val isChecked = _isCustomSwitchChecked.value ?: false
+
+        _isCustomSwitchChecked.value = !isChecked
     }
 }

@@ -66,7 +66,7 @@ class InputsFragment : AppBaseFragment() {
 
         }
         binding.toggleSwitchButton.setOnClickListener {
-
+            findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToSwitchFragment())
         }
         binding.textareaButton.setOnClickListener {
 

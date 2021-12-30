@@ -1,6 +1,5 @@
 package com.example.compose.ui.components
 
-import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Checkbox
 import androidx.compose.material.CheckboxDefaults
@@ -12,8 +11,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.compose.composables.R
 
 
 /**
@@ -87,11 +88,11 @@ fun CheckboxesPreview() {
     ) {
         Column(
             modifier = Modifier.padding(8.dp),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.Start
+            horizontalAlignment = Alignment.Start,
+            verticalArrangement = Arrangement.Top
         ) {
             CustomCheckbox()
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.material_large)))
             CustomLabeledCheckbox(
                 //checked = false,
                 onCheckedChange = {}

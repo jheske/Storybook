@@ -10,6 +10,12 @@ import com.example.compose.storybook.ui.AppBaseFragment
 import com.example.compose.storybook.ui.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
 
+/**
+ * This is the "NavHostFragment," ie., the first fragment in
+ * the Navigation graph (see res/navigation/navigation.xml).
+ *
+ *  @see [link][fra]
+ */
 @AndroidEntryPoint
 class MainFragment : AppBaseFragment() {
 

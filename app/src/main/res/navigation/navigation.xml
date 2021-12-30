@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_inputsFragment_to_checkboxFragment"
             app:destination="@id/checkboxFragment" />
+        <action
+            android:id="@+id/action_inputsFragment_to_switchFragment"
+            app:destination="@id/switchFragment" />
     </fragment>
 
     <fragment
@@ -33,4 +36,8 @@
     <fragment
         android:id="@+id/checkboxFragment"
         android:name="com.example.compose.storybook.ui.fragments.CheckboxFragment" />
+
+    <fragment
+        android:id="@+id/switchFragment"
+        android:name="com.example.compose.storybook.ui.fragments.SwitchFragment" />
 </navigation>

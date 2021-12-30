@@ -19,21 +19,23 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import com.example.compose.storybook.databinding.FragmentSwitchBinding
 import com.example.compose.ui.components.CustomCheckbox
 // composables module imports
 import com.example.compose.ui.components.CustomLabeledCheckbox
+import com.example.compose.ui.components.CustomSwitch
 
 
 @AndroidEntryPoint
-class CheckboxFragment : AppBaseFragment() {
-    lateinit var binding: FragmentCheckboxBinding
+class SwitchFragment : AppBaseFragment() {
+    lateinit var binding: FragmentSwitchBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCheckboxBinding.inflate(inflater)
+        binding = FragmentSwitchBinding.inflate(inflater)
 
         return binding.root
     }
@@ -41,11 +43,11 @@ class CheckboxFragment : AppBaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val checkboxWithLabel = binding.composeCheckboxWithLabel
+        val switch = binding.composeSwitch
 
-        checkboxWithLabel.setContent {
+        switch.setContent {
             StorybookTheme { // or AppCompatTheme or CustomTheme
-                // !!!!WARNING: You have to manually add
+                // !!!!WARNING: You have to manually add:
                 //
                 //        import androidx.compose.runtime.getValue
                 //
@@ -56,49 +58,18 @@ class CheckboxFragment : AppBaseFragment() {
                     horizontalAlignment = Alignment.Start,
                 ) {
                     /**
-                     * StorybookViewModel uses LiveDatas for observing changes to the checkbox states,
+                     * StorybookViewModel uses LiveDatas for observing changes to states,
                      * which is typical for legacy apps, but can't be used with Composables.
                      * To use a LiveData, pass it to the Composable as an observableState.
                      * The Composable will observe obersevableState and recompose when
-                     * the user clicks on the checkbox.
+                     * the user toggles the Switch.
                      */
-                    val isCheckboxCheckedObservable by viewModel.isCustomCheckboxChecked
+                    val isSwitchCheckedObservable by viewModel.isCustomSwitchChecked
                         .observeAsState(false)
-
-                    val isLabeledCheckboxCheckedObservable by viewModel.isCustomLabeledCheckboxChecked
-                        .observeAsState(false)
-
-                    // CustomCheckbox and heading
-                    Text(
-                        text = "CustomCheckbox",
-                        style = MaterialTheme.typography.h6
-                    )
-                    Spacer(
-                        modifier = Modifier.height(dimensionResource(id = R.dimen.material_medium))
-                    )
-                    CustomCheckbox(
-                        isChecked = isCheckboxCheckedObservable,
+                    CustomSwitch(
+                        isChecked = isSwitchCheckedObservable,
                         onCheckedChange = {
-                            viewModel.checkCustomCheckbox()
-                        }
-                    )
-
-                    Spacer(
-                        modifier = Modifier.height(dimensionResource(id = R.dimen.material_large))
-                    )
-
-                    // CustomLabeledCheckbox and heading
-                    Text(
-                        text = "CustomLabeledCheckbox",
-                        style = MaterialTheme.typography.h6
-                    )
-                    Spacer(
-                        modifier = Modifier.height(dimensionResource(id = R.dimen.material_medium))
-                    )
-                    CustomLabeledCheckbox(
-                        isChecked = isLabeledCheckboxCheckedObservable,
-                        onCheckedChange = {
-                            viewModel.checkCustomLabeledCheckbox()
+                            viewModel.checkCustomSwitch()
                         }
                     )
                 }
@@ -114,11 +85,11 @@ class CheckboxFragment : AppBaseFragment() {
     }
 
     override fun setupObservers() {
-        viewModel.isCustomCheckboxChecked.observe(viewLifecycleOwner, { isChecked ->
+        viewModel.isCustomSwitchChecked.observe(viewLifecycleOwner, { isChecked ->
             if (isChecked) {
-                Toast.makeText(requireContext(), "Checkbox is checked!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Switch is checked!", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(requireContext(), "Checkbox is unchecked!", Toast.LENGTH_SHORT)
+                Toast.makeText(requireContext(), "Switch is unchecked!", Toast.LENGTH_SHORT)
                     .show()
             }
         })
