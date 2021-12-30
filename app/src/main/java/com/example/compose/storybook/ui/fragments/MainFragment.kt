@@ -41,10 +41,6 @@ class MainFragment : AppBaseFragment() {
         (requireActivity() as MainActivity).showAppTitleAndIcon()
     }
 
-    override fun setupObservers() {
-        /** NO OP **/
-    }
-
     private fun setupClickListeners() {
         binding.gettingStartedButton.setOnClickListener {
 

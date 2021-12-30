@@ -42,7 +42,6 @@ class ButtonFragment : AppBaseFragment() {
                         // Most apps use ViewModels
                         // onClick() can call functions inside the viewModel.
                         // Activities and Fragments "observe" LiveData values changes.
-                        // See setupObservers() below.
                         viewModel.onComposeButtonClicked()
                         Toast.makeText(requireContext(), "ComposeButton!", Toast.LENGTH_SHORT).show()
                     },
@@ -58,14 +57,6 @@ class ButtonFragment : AppBaseFragment() {
             false,
             getString(R.string.button)
         )
-    }
-
-    override fun setupObservers() {
-//        viewModel.onComposeButtonClicked.observe(viewLifecycleOwner) { buttonClicked ->
-//            if (buttonClicked) {
-//                Toast.makeText(requireContext(), "ViewModel observer!", Toast.LENGTH_SHORT).show()
-//            }
-//        }
     }
 }
 

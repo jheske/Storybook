@@ -17,15 +17,15 @@ class StorybookViewModel : ViewModel() {
     /*****************************
      * Button
      */
-    private var buttonClickCounter = 0
+    private var buttonClickCount = 0
     // This is bound to a TextView in fragment_button.xml
-    val buttonClickCounterString = MutableLiveData("")
+    val buttonClickCountString = MutableLiveData("")
 
     /**
      * Called from inside ComposeButton.onClick{}
      */
     fun onComposeButtonClicked() {
-        buttonClickCounterString.value = "ViewModel: Button click counter = ${buttonClickCounter++}"
+        buttonClickCountString.value = "ViewModel: Click count = ${++buttonClickCount}"
     }
 
     /*****************************
@@ -41,49 +41,65 @@ class StorybookViewModel : ViewModel() {
     /*****************************
      * Checkbox
      */
-    private val _isComposeCheckboxChecked = MutableLiveData(false)
-    val isComposeCheckboxChecked: LiveData<Boolean> = _isComposeCheckboxChecked
+    private var checkboxClickCount = 0
+
+    // This is bound to a TextView in fragment_button.xml
+    val checkboxClickCountString = MutableLiveData("")
 
     /**
      * Toggle the checkbox. All observers will receive the changed
      * value. Composable observers will recompose.
      */
-    fun checkComposeCheckbox() {
-        // LiveDatas are nullable. If null, default to false.
-        val isChecked = _isComposeCheckboxChecked.value ?: false
-
-        _isComposeCheckboxChecked.value = !isChecked
+    fun onCheckboxClicked() {
+        checkboxClickCountString.value =
+            "ViewModel: Click count = ${++checkboxClickCount}"
     }
-
 
     /*****************************
      * Labeled Checkbox
      */
-    private val _isComposeLabeledCheckboxChecked = MutableLiveData(false)
-    val isComposeLabeledCheckboxChecked: LiveData<Boolean> = _isComposeLabeledCheckboxChecked
+    private var checkboxWithLablClickCount = 0
 
-    fun checkComposeLabeledCheckbox() {
-        // LiveDatas are nullable. If null, default to false.
-        val isChecked = _isComposeLabeledCheckboxChecked.value ?: false
+    // This is bound to a TextView in fragment_button.xml
+    val checkboxWithLabelClickCountString = MutableLiveData("")
 
-        _isComposeLabeledCheckboxChecked.value = !isChecked
+    fun onLabeledCheckboxClicked() {
+        checkboxWithLabelClickCountString.value =
+            "ViewModel: Click count = ${++checkboxWithLablClickCount}"
     }
 
     /*****************************
      * Switch
      */
-    private val _isComposeSwitchChecked = MutableLiveData(false)
-    val isComposeSwitchChecked: LiveData<Boolean> = _isComposeSwitchChecked
+
+    private var switchToggleCount = 0
+    // This is bound to a TextView in fragment_button.xml
+    val switchToggleCountString = MutableLiveData("")
 
     /**
      * Toggle the switch. All observers will receive the changed
-     * value. Composable observers will recompose.
+     * value.
      */
-    fun checkComposeSwitch() {
-        // LiveDatas are nullable. If null, default to false.
-        val isChecked = _isComposeSwitchChecked.value ?: false
+    fun onSwitchToggled() {
+        switchToggleCountString.value =
+            "ViewModel: Toggle count = ${++switchToggleCount}"
+    }
 
-        _isComposeSwitchChecked.value = !isChecked
+    /*****************************
+     * SwitchWithLabel
+     */
+
+    private var switchWithLabelToggleCount = 0
+    // This is bound to a TextView in fragment_button.xml
+    val switchWithLabelToggleCountString = MutableLiveData("")
+
+    /**
+     * Toggle the switch. All observers will receive the changed
+     * value.
+     */
+    fun onSwitchWithLabelToggled() {
+        switchWithLabelToggleCountString.value =
+            "ViewModel: Toggle count = ${++switchWithLabelToggleCount}"
     }
 }
 

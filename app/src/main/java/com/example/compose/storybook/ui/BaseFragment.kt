@@ -12,23 +12,10 @@ abstract class AppBaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupAppBar()
-        setupObservers()
     }
 
     abstract fun setupAppBar(
         showAppTitleAndIcon: Boolean = true,
         title: String = ""
     )
-
-    /**
-     * A typical View's-based app will observe and respond to changes to LiveData values
-     * in a ViewModel.
-     *
-     * Most custom components will have associated LiveData values in
-     * StorybookViewModel. Use this function to set up observers.
-     * If there aren't any, just add a placeholder to the Fragment:
-     *
-     *   override fun setupObservers() { /** NO OP **/ }
-     */
-    abstract fun setupObservers()
 }

@@ -34,15 +34,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/buttonTitle" />
 
-        <!--  This is bound to buttonClickCounterString variable in StorybookViewModel.kt -->
+        <!--  This is bound to buttonClickCountString variable in StorybookViewModel.kt -->
         <TextView
-            android:id="@+id/buttonCounterTextView"
+            android:id="@+id/buttonCountTextView"
             style="@style/TextAppearance.MaterialComponents.Body2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_marginHorizontal="@dimen/material_large"
             android:layout_marginTop="@dimen/material_medium"
-            android:text="@{viewModel.buttonClickCounterString}"
+            android:text="@{viewModel.buttonClickCountString}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/composeButton" />
 

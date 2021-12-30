@@ -39,10 +39,6 @@ class InputsFragment : AppBaseFragment() {
         )
     }
 
-    override fun setupObservers() {
-        /** NO OP **/
-    }
-
     private fun setupClickListeners() {
         binding.buttonButton.setOnClickListener {
             findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToButtonFragment())

@@ -1,44 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/material_xlarge"
-    android:paddingHorizontal="@dimen/material_large"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/checkboxTitle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/compose_checkbox"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <data>
 
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeCheckbox"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/material_medium"
-        android:layout_marginHorizontal="@dimen/material_large"
-        app:layout_constraintTop_toBottomOf="@id/checkboxTitle"/>
+        <import type="android.view.View" />
 
-    <TextView
-        android:id="@+id/checkboxWithLabelTitle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/compose_checkbox_with_label"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
-        android:layout_marginTop="@dimen/material_large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/composeCheckbox"/>
+        <variable
+            name="viewModel"
+            type="com.example.compose.storybook.ui.StorybookViewModel" />
+    </data>
 
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeCheckboxWithLabel"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/material_medium"
-        android:layout_marginHorizontal="@dimen/material_large"
-        app:layout_constraintTop_toBottomOf="@id/checkboxWithLabelTitle"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/material_xlarge"
+        android:paddingHorizontal="@dimen/material_large">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/checkboxTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/compose_checkbox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/composeCheckbox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            app:layout_constraintTop_toBottomOf="@id/checkboxTitle" />
+
+        <!--  This is bound to variable in StorybookViewModel.kt -->
+        <TextView
+            android:id="@+id/checkboxCountTextView"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            android:text="@{viewModel.checkboxClickCountString}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/composeCheckbox" />
+
+        <TextView
+            android:id="@+id/checkboxWithLabelTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/material_large"
+            android:text="@string/compose_checkbox_with_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/checkboxCountTextView" />
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/composeCheckboxWithLabel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            app:layout_constraintTop_toBottomOf="@id/checkboxWithLabelTitle" />
+
+        <!--  This is bound to variable in StorybookViewModel.kt -->
+        <TextView
+            android:id="@+id/checkboxWithLabelCountTextView"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            android:text="@{viewModel.checkboxWithLabelClickCountString}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/composeCheckboxWithLabel" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

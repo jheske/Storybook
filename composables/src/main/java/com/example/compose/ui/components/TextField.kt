@@ -16,40 +16,72 @@ import androidx.compose.ui.text.input.KeyboardType
 
 @Composable
 fun ComposeTextInput(
-    textValue: String,    // observable state
-    onValueChange: (String) -> Unit = {}
+    value: String,    // observable state
+    onValueChange: (String) -> Unit = {},
+    label: String = "TextInput Label",
+    placeholder: String = "Text Placeholder",
+    keyboardType: KeyboardType = KeyboardType.Ascii
 ) {
+    var text by remember { mutableStateOf(value) }
+
     // TODO Integrate design system custom Theme colors, dimens, typography, etc.
     Column(Modifier.padding(16.dp)) {
         TextField(
-            value = textValue,    // observable state
-            onValueChange = onValueChange,
-            label = { Text(text = "Label") },
-            placeholder = { Text(text = "Placeholder") }
+            value = text,    // observable
+            onValueChange = {
+                text = it
+                onValueChange.invoke(text)
+            },
+            label = { Text(text = label) },
+            placeholder = { Text(text = placeholder) },
+            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = keyboardType),
         )
     }
 }
 
 @Composable
 fun ComposeNumericTextInput(
-    textValue: String,    // observable state
-    onValueChange: (String) -> Unit = {}
+    value: String,    // observable state
+    onValueChange: (String) -> Unit = {},
+    label: String = "NumericInput Label",
+    placeholder: String = "Numeric Placeholder",
 ) {
-    var text by remember {
-        mutableStateOf(textValue)
-    }
+    var text by remember { mutableStateOf(value) }
 
     // TODO Integrate design system custom Theme colors, dimens, typography, etc.
     Column(Modifier.padding(16.dp)) {
-        TextField(
+        ComposeTextInput(
             value = text,    // observable
             onValueChange = { value ->
                 text = value.filter { it.isDigit() }
                 onValueChange.invoke(text)
             },
-            label = { Text(text = "Label") },
-            placeholder = { Text(text = "Placeholder") },
-            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
+            label = label,
+            placeholder = placeholder,
+            keyboardType = KeyboardType.Number
         )
     }
 }
+
+//@Composable
+//fun ComposeNumericTextInput(
+//    textValue: String,    // observable state
+//    onValueChange: (String) -> Unit = {}
+//) {
+//    var text by remember { mutableStateOf(textValue) }
+//
+//    // TODO Integrate design system custom Theme colors, dimens, typography, etc.
+//    Column(Modifier.padding(16.dp)) {
+//        TextField(
+//            value = text,    // observable
+//            onValueChange = { value ->
+//                text = value.filter { it.isDigit() }
+//                onValueChange.invoke(text)
+//            },
+//            label = { Text(text = "Label") },
+//            placeholder = { Text(text = "Placeholder") },
+//            keyboardOptions = KeyboardOptions.Default.copy(keyboardType = KeyboardType.Number),
+//        )
+//    }
+//}
+

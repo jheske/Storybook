@@ -38,16 +38,21 @@ fun SimpleCheckbox(
  */
 @Composable
 fun ComposeCheckbox(
-    isChecked: Boolean = true,   // observable state
+    isChecked: Boolean = true,   // initial value
     onCheckedChange: (Boolean) -> Unit = {},
 ) {
     Row(
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
+        val checkedState = remember { mutableStateOf(isChecked) }
+
         Checkbox(
-            checked = isChecked,  // isChecked is an observable state
-            onCheckedChange = onCheckedChange,
+            checked = checkedState.value,
+            onCheckedChange = {
+                checkedState.value = it
+                onCheckedChange.invoke(it)
+            },
             enabled = true,
             colors = CheckboxDefaults.colors(Color.Green)
         )
@@ -61,8 +66,8 @@ fun ComposeCheckbox(
  * Checkbox will recompose when the user clicks it.
  */
 @Composable
-fun ComposeLabeledCheckbox(
-    isChecked: Boolean = true,   // observable state
+fun ComposeCheckboxWithLabel(
+    isChecked: Boolean = true,
     onCheckedChange: (Boolean) -> Unit = {},
     text: String = "Label"
 ) {
@@ -71,7 +76,7 @@ fun ComposeLabeledCheckbox(
         verticalAlignment = Alignment.CenterVertically
     ) {
         ComposeCheckbox(
-            isChecked = isChecked,  // observable state
+            isChecked = isChecked,
             onCheckedChange = onCheckedChange,
         )
         Text(
@@ -96,7 +101,7 @@ fun CheckboxesPreview() {
         ) {
             ComposeCheckbox()
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.material_large)))
-            ComposeLabeledCheckbox(
+            ComposeCheckboxWithLabel(
                 //checked = false,
                 onCheckedChange = {}
             )

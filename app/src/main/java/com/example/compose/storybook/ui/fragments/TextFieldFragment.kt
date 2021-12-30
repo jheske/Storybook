@@ -44,20 +44,13 @@ class TextFieldFragment : AppBaseFragment() {
 
         composeTextField.setContent {
             StorybookTheme { // or AppCompatTheme or CustomTheme
-                // !!!!WARNING: You have to manually add
-                //
-                //        import androidx.compose.runtime.getValue
-                //
-                // or observeAsStates won't compile!!!!
                 Column(
                     modifier = Modifier.padding(dimensionResource(id = R.dimen.material_medium)),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.Start,
                 ) {
-                    val textValueObserver by viewModel.textValue.observeAsState("")
-
                     ComposeTextInput(
-                        textValue = textValueObserver,
+                        value = "Initial Text",
                         onValueChange = { text ->
                             viewModel.setTextValue(text)
                         }
@@ -68,20 +61,13 @@ class TextFieldFragment : AppBaseFragment() {
 
         composeNumericTextField.setContent {
             StorybookTheme { // or AppCompatTheme or CustomTheme
-                // !!!!WARNING: You have to manually add
-                //
-                //        import androidx.compose.runtime.getValue
-                //
-                // or observeAsStates won't compile!!!!
                 Column(
                     modifier = Modifier.padding(dimensionResource(id = R.dimen.material_medium)),
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.Start,
                 ) {
-                    val textValueObserver by viewModel.textValue.observeAsState("")
-
                     ComposeNumericTextInput(
-                        textValue = textValueObserver,
+                        value = "0",
                         onValueChange = { text ->
                             viewModel.setTextValue(text)
                         }
@@ -96,12 +82,6 @@ class TextFieldFragment : AppBaseFragment() {
             false,
             getString(R.string.text_field)
         )
-    }
-
-    override fun setupObservers() {
-        viewModel.textValue.observe(viewLifecycleOwner, { text ->
-            Log.d("TextField","TextField value = $text")
-        })
     }
 }
 

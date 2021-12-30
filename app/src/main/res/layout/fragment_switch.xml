@@ -1,44 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/material_xlarge"
-    android:paddingHorizontal="@dimen/material_large"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <TextView
-        android:id="@+id/switchTitle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/compose_switch"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+    <data>
 
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeSwitch"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/material_medium"
-        android:layout_marginHorizontal="@dimen/material_large"
-        app:layout_constraintTop_toBottomOf="@id/switchTitle"/>
+        <import type="android.view.View" />
 
-    <TextView
-        android:id="@+id/switchWithLabelTitle"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:text="@string/compose_switch_with_label"
-        style="@style/TextAppearance.MaterialComponents.Headline6"
-        android:layout_marginTop="@dimen/material_large"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/composeSwitch"/>
+        <variable
+            name="viewModel"
+            type="com.example.compose.storybook.ui.StorybookViewModel" />
+    </data>
 
-    <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeSwitchWithLabel"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/material_large"
-        android:layout_marginHorizontal="@dimen/material_medium"
-        app:layout_constraintTop_toBottomOf="@id/switchWithLabelTitle"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/material_xlarge"
+        android:paddingHorizontal="@dimen/material_large">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/switchTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/compose_switch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/composeSwitch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            app:layout_constraintTop_toBottomOf="@id/switchTitle" />
+
+        <!--  This is bound to variable in StorybookViewModel.kt -->
+        <TextView
+            android:id="@+id/switchCountTextView"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            android:text="@{viewModel.switchToggleCountString}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/composeSwitch" />
+
+        <TextView
+            android:id="@+id/switchWithLabelTitle"
+            style="@style/TextAppearance.MaterialComponents.Headline6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/material_large"
+            android:text="@string/compose_switch_with_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/switchCountTextView" />
+
+        <androidx.compose.ui.platform.ComposeView
+            android:id="@+id/composeSwitchWithLabel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_large"
+            app:layout_constraintTop_toBottomOf="@id/switchWithLabelTitle" />
+
+        <!--  This is bound to variable in StorybookViewModel.kt -->
+        <TextView
+            android:id="@+id/switchWithLabelCountTextView"
+            style="@style/TextAppearance.MaterialComponents.Body2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="@dimen/material_large"
+            android:layout_marginTop="@dimen/material_medium"
+            android:text="@{viewModel.switchWithLabelToggleCountString}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/composeSwitchWithLabel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
