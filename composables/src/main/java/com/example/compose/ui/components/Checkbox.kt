@@ -40,7 +40,7 @@ fun SimpleCheckbox(
  * Checkbox will recompose when the user clicks it.
  */
 @Composable
-fun CustomCheckbox(
+fun ComposeCheckbox(
     isChecked: Boolean = true,   // observable state
     onCheckedChange: (Boolean) -> Unit = {},
 ) {
@@ -58,7 +58,7 @@ fun CustomCheckbox(
 }
 
 @Composable
-fun CustomLabeledCheckbox(
+fun ComposeLabeledCheckbox(
     isChecked: Boolean = true,   // observable state
     onCheckedChange: (Boolean) -> Unit = {},
     text: String = "Label"
@@ -67,7 +67,7 @@ fun CustomLabeledCheckbox(
         horizontalArrangement = Arrangement.Start,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        CustomCheckbox(
+        ComposeCheckbox(
             isChecked = isChecked,  // observable state
             onCheckedChange = onCheckedChange,
         )
@@ -91,9 +91,9 @@ fun CheckboxesPreview() {
             horizontalAlignment = Alignment.Start,
             verticalArrangement = Arrangement.Top
         ) {
-            CustomCheckbox()
+            ComposeCheckbox()
             Spacer(modifier = Modifier.height(dimensionResource(id = R.dimen.material_large)))
-            CustomLabeledCheckbox(
+            ComposeLabeledCheckbox(
                 //checked = false,
                 onCheckedChange = {}
             )

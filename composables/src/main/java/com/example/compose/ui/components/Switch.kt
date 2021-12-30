@@ -8,7 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun CustomSwitch(
+fun ComposeSwitch(
     isChecked: Boolean = true,   // observable state
     onCheckedChange: (Boolean) -> Unit = {},
 ) {

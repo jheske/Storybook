@@ -8,13 +8,11 @@ import android.view.ViewGroup
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.fragment.app.viewModels
-import com.example.compose.composables.CustomButton
+import com.example.compose.composables.ComposeButton
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentButtonBinding
 import com.example.compose.storybook.ui.AppBaseFragment
 import com.example.compose.storybook.ui.MainActivity
-import com.example.compose.storybook.ui.StorybookViewModel
 import com.example.udemy.compose.firstapp.ui.theme.StorybookTheme
 
 class ButtonFragment : AppBaseFragment() {
@@ -35,12 +33,9 @@ class ButtonFragment : AppBaseFragment() {
 
         val composeButton = binding.composeButton
 
-        // Start observing ViewModel values.
-        //setupObservers()
-
         composeButton.setContent {
             StorybookTheme { // or AppCompatTheme or CustomTheme
-                CustomButton(
+                ComposeButton(
                     onClick = {
                         // Most apps use ViewModels
                         // onClick() should call a function inside the viewModel.
@@ -48,7 +43,7 @@ class ButtonFragment : AppBaseFragment() {
                         // to Compose's MutableStates).
                         // Activities and Fragments "observe" LiveData values changes.
                         // See setupObservers() below.
-                        viewModel.clickCustomButton()
+                        viewModel.clickComposeButton()
                     },
                     shape = RoundedCornerShape(20.dp),
                     text = stringResource(id = R.string.compose_button),
@@ -65,7 +60,7 @@ class ButtonFragment : AppBaseFragment() {
     }
 
     override fun setupObservers() {
-        viewModel.onCustomButtonClicked.observe(viewLifecycleOwner, { buttonClicked ->
+        viewModel.onComposeButtonClicked.observe(viewLifecycleOwner, { buttonClicked ->
             if (buttonClicked) {
                 Toast.makeText(requireContext(), "Button!", Toast.LENGTH_SHORT ).show()
             }

@@ -2,13 +2,43 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/material_xlarge"
+    android:paddingHorizontal="@dimen/material_large"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/switchTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/compose_switch"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.compose.ui.platform.ComposeView
         android:id="@+id/composeSwitch"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="@dimen/material_large"
         android:layout_marginHorizontal="@dimen/material_large"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/switchTitle"/>
+
+    <TextView
+        android:id="@+id/switchWithLabelTitle"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="@string/compose_switch_with_label"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_marginTop="@dimen/material_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/composeSwitch"/>
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/composeSwitchWithLabel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/material_large"
+        android:layout_marginHorizontal="@dimen/material_large"
+        app:layout_constraintTop_toBottomOf="@id/switchWithLabelTitle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

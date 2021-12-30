@@ -19,55 +19,55 @@ class StorybookViewModel : ViewModel() {
      * Any ButtonFragment observes onCustomButtonClicked.
      * and respond to changes (see ButtonFragment.setupObservers()).
      */
-    private val _onCustomButtonClicked = MutableLiveData(false)
-    val onCustomButtonClicked = _onCustomButtonClicked
+    private val _onComposeButtonClicked = MutableLiveData(false)
+    val onComposeButtonClicked = _onComposeButtonClicked
 
     // Checkbox
-    private val _isCustomCheckboxChecked = MutableLiveData(false)
-    val isCustomCheckboxChecked = _isCustomCheckboxChecked
+    private val _isComposeCheckboxChecked = MutableLiveData(false)
+    val isComposeCheckboxChecked = _isComposeCheckboxChecked
 
     // Labeled Checkbox
-    private val _isCustomLabeledCheckboxChecked = MutableLiveData(false)
-    val isCustomLabeledCheckboxChecked = _isCustomLabeledCheckboxChecked
+    private val _isComposeLabeledCheckboxChecked = MutableLiveData(false)
+    val isComposeLabeledCheckboxChecked = _isComposeLabeledCheckboxChecked
 
     // Switch
-    private val _isCustomSwitchChecked = MutableLiveData(false)
-    val isCustomSwitchChecked = _isCustomSwitchChecked
+    private val _isComposeSwitchChecked = MutableLiveData(false)
+    val isComposeSwitchChecked = _isComposeSwitchChecked
 
     /**
-     * ButtonActivity observes _onCustomButtonClicked
+     * ButtonActivity observes _onComposeButtonClicked
      * and calls this function when uses clicks the button.
      */
-    fun clickCustomButton() {
-        _onCustomButtonClicked.value = true
+    fun clickComposeButton() {
+        _onComposeButtonClicked.value = true
     }
 
     /**
      * Toggle the checkbox. All observers will receive the changed
      * value. Composable observers will recompose.
      */
-    fun checkCustomCheckbox() {
+    fun checkComposeCheckbox() {
         // LiveDatas are nullable. If null, default to false.
-        val isChecked = _isCustomCheckboxChecked.value ?: false
+        val isChecked = _isComposeCheckboxChecked.value ?: false
 
-        _isCustomCheckboxChecked.value = !isChecked
+        _isComposeCheckboxChecked.value = !isChecked
     }
 
-    fun checkCustomLabeledCheckbox() {
+    fun checkComposeLabeledCheckbox() {
         // LiveDatas are nullable. If null, default to false.
-        val isChecked = _isCustomLabeledCheckboxChecked.value ?: false
+        val isChecked = _isComposeLabeledCheckboxChecked.value ?: false
 
-        _isCustomLabeledCheckboxChecked.value = !isChecked
+        _isComposeLabeledCheckboxChecked.value = !isChecked
     }
 
     /**
      * Toggle the switch. All observers will receive the changed
      * value. Composable observers will recompose.
      */
-    fun checkCustomSwitch() {
+    fun checkComposeSwitch() {
         // LiveDatas are nullable. If null, default to false.
-        val isChecked = _isCustomSwitchChecked.value ?: false
+        val isChecked = _isComposeSwitchChecked.value ?: false
 
-        _isCustomSwitchChecked.value = !isChecked
+        _isComposeSwitchChecked.value = !isChecked
     }
 }
