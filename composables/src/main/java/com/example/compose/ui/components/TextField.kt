@@ -17,13 +17,13 @@ import androidx.compose.ui.text.input.KeyboardType
 @Composable
 fun ComposeTextInput(
     textValue: String,    // observable state
-    onValueChanged: (String) -> Unit = {}
+    onValueChange: (String) -> Unit = {}
 ) {
     // TODO Integrate design system custom Theme colors, dimens, typography, etc.
     Column(Modifier.padding(16.dp)) {
         TextField(
             value = textValue,    // observable state
-            onValueChange = onValueChanged,
+            onValueChange = onValueChange,
             label = { Text(text = "Label") },
             placeholder = { Text(text = "Placeholder") }
         )

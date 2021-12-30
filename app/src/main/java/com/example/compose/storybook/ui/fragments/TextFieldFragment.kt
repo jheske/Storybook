@@ -58,7 +58,7 @@ class TextFieldFragment : AppBaseFragment() {
 
                     ComposeTextInput(
                         textValue = textValueObserver,
-                        onValueChanged = { text ->
+                        onValueChange = { text ->
                             viewModel.setTextValue(text)
                         }
                     )
