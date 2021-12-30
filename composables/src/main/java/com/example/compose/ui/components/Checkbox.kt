@@ -34,10 +34,7 @@ fun SimpleCheckbox(
 }
 
 /**
- * Checkbox with Text label to its Right/End
- *
- * isChecked is passed in as an observable state so the
- * Checkbox will recompose when the user clicks it.
+ * Simple Checkbox
  */
 @Composable
 fun ComposeCheckbox(
@@ -57,6 +54,12 @@ fun ComposeCheckbox(
     }
 }
 
+/**
+ * Checkbox with Text label to its Right/End
+ *
+ * isChecked is passed in as an observable state so the
+ * Checkbox will recompose when the user clicks it.
+ */
 @Composable
 fun ComposeLabeledCheckbox(
     isChecked: Boolean = true,   // observable state

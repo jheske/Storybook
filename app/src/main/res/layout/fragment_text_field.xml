@@ -2,43 +2,45 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/material_xlarge"
     android:paddingHorizontal="@dimen/material_large"
+    android:layout_marginTop="@dimen/material_xlarge"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
-        android:id="@+id/checkboxTitle"
+        android:id="@+id/textFieldTitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/compose_checkbox"
+        android:text="@string/compose_textfield"
         style="@style/TextAppearance.MaterialComponents.Headline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeCheckbox"
+        android:id="@+id/composeTextField"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/material_medium"
         android:layout_marginHorizontal="@dimen/material_large"
-        app:layout_constraintTop_toBottomOf="@id/checkboxTitle"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textFieldTitle"/>
 
     <TextView
-        android:id="@+id/checkboxWithLabelTitle"
+        android:id="@+id/numericTextFieldTitle"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="@string/compose_checkbox_with_label"
+        android:text="@string/compose_numeric_textfield"
         style="@style/TextAppearance.MaterialComponents.Headline6"
         android:layout_marginTop="@dimen/material_large"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/composeCheckbox"/>
+        app:layout_constraintTop_toBottomOf="@id/composeTextField"/>
 
     <androidx.compose.ui.platform.ComposeView
-        android:id="@+id/composeCheckboxWithLabel"
+        android:id="@+id/composeNumericTextField"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/material_medium"
         android:layout_marginHorizontal="@dimen/material_large"
-        app:layout_constraintTop_toBottomOf="@id/checkboxWithLabelTitle"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numericTextFieldTitle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

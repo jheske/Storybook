@@ -14,7 +14,7 @@
     <string name="button">Button</string>
     <string name="checkbox">Checkbox</string>
     <string name="dropdown">Dropdown</string>
-    <string name="input">Input</string>
+    <string name="text_field">TextField</string>
     <string name="phoneput">Phoneput</string>
     <string name="pinput">Pinput</string>
     <string name="radio">Radio</string>
@@ -26,7 +26,8 @@
     <string name="compose_checkbox">ComposeCheckbox</string>
     <string name="compose_checkbox_with_label">ComposeCheckboxWithLabel</string>
     <string name="compose_dropdown">ComposeDropdown</string>
-    <string name="compose_input">ComposeTextInput</string>
+    <string name="compose_textfield">ComposeTextField</string>
+    <string name="compose_numeric_textfield">ComposeNumericTextField</string>
     <string name="compose_phoneput">ComposePinput (TextInput - Phone)</string>
     <string name="compose_pinput">ComposePinput (TextInput - PIN)</string>
     <string name="compose_radio">ComposeRadio</string>

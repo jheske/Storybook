@@ -103,7 +103,7 @@ class CheckboxFragment : AppBaseFragment() {
                     )
                 }
             }
-               }
+        }
     }
 
     override fun setupAppBar(showAppTitleAndIcon: Boolean, title: String) {

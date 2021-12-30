@@ -53,8 +53,8 @@ class InputsFragment : AppBaseFragment() {
         binding.dropdownButton.setOnClickListener {
 
         }
-        binding.inputButton.setOnClickListener {
-
+        binding.textFieldBUtton.setOnClickListener {
+            findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToTextFieldFragment())
         }
         binding.phoneputButton.setOnClickListener {
 

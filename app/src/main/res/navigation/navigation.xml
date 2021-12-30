@@ -27,6 +27,9 @@
         <action
             android:id="@+id/action_inputsFragment_to_switchFragment"
             app:destination="@id/switchFragment" />
+        <action
+            android:id="@+id/action_inputsFragment_to_textFieldFragment"
+            app:destination="@id/textFieldFragment" />
     </fragment>
 
     <fragment
@@ -40,4 +43,7 @@
     <fragment
         android:id="@+id/switchFragment"
         android:name="com.example.compose.storybook.ui.fragments.SwitchFragment" />
+    <fragment
+        android:id="@+id/textFieldFragment"
+        android:name="com.example.compose.storybook.ui.fragments.TextFieldFragment" />
 </navigation>

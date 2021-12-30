@@ -74,7 +74,7 @@ class SwitchFragment : AppBaseFragment() {
     override fun setupAppBar(showAppTitleAndIcon: Boolean, title: String) {
         (requireActivity() as MainActivity).showAppTitleAndIcon(
             false,
-            getString(R.string.checkbox)
+            getString(R.string.toggle_switch)
         )
     }
 

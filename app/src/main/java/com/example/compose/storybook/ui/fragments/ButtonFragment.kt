@@ -60,11 +60,11 @@ class ButtonFragment : AppBaseFragment() {
     }
 
     override fun setupObservers() {
-        viewModel.onComposeButtonClicked.observe(viewLifecycleOwner, { buttonClicked ->
+        viewModel.onComposeButtonClicked.observe(viewLifecycleOwner) { buttonClicked ->
             if (buttonClicked) {
-                Toast.makeText(requireContext(), "Button!", Toast.LENGTH_SHORT ).show()
+                Toast.makeText(requireContext(), "Button!", Toast.LENGTH_SHORT).show()
             }
-        })
+        }
     }
 }
 

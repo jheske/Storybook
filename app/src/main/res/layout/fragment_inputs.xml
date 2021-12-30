@@ -46,13 +46,13 @@
         app:layout_constraintTop_toBottomOf="@id/checkboxButton" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:enabled="false"
-        android:id="@+id/inputButton"
+        android:enabled="true"
+        android:id="@+id/textFieldBUtton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/material_xlarge"
         android:layout_marginTop="@dimen/material_large"
-        android:text="@string/input"
+        android:text="@string/text_field"
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
         style="@style/Theme.Storybook.MenuButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputButton" />
+        app:layout_constraintTop_toBottomOf="@id/textFieldBUtton" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:enabled="false"

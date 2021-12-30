@@ -1,5 +1,3 @@
-package com.example.compose.storybook.ui
-
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -19,20 +17,12 @@ class StorybookViewModel : ViewModel() {
      * Any ButtonFragment observes onCustomButtonClicked.
      * and respond to changes (see ButtonFragment.setupObservers()).
      */
+
+    /*****************************
+     * Button
+     */
     private val _onComposeButtonClicked = MutableLiveData(false)
     val onComposeButtonClicked = _onComposeButtonClicked
-
-    // Checkbox
-    private val _isComposeCheckboxChecked = MutableLiveData(false)
-    val isComposeCheckboxChecked = _isComposeCheckboxChecked
-
-    // Labeled Checkbox
-    private val _isComposeLabeledCheckboxChecked = MutableLiveData(false)
-    val isComposeLabeledCheckboxChecked = _isComposeLabeledCheckboxChecked
-
-    // Switch
-    private val _isComposeSwitchChecked = MutableLiveData(false)
-    val isComposeSwitchChecked = _isComposeSwitchChecked
 
     /**
      * ButtonActivity observes _onComposeButtonClicked
@@ -41,6 +31,22 @@ class StorybookViewModel : ViewModel() {
     fun clickComposeButton() {
         _onComposeButtonClicked.value = true
     }
+
+    /*****************************
+     * TextInput
+     */
+    private val _textValue = MutableLiveData("")
+    val textValue = _textValue
+
+    fun setTextValue(text: String) {
+        _textValue.value = text
+    }
+
+    /*****************************
+     * Checkbox
+     */
+    private val _isComposeCheckboxChecked = MutableLiveData(false)
+    val isComposeCheckboxChecked = _isComposeCheckboxChecked
 
     /**
      * Toggle the checkbox. All observers will receive the changed
@@ -53,12 +59,25 @@ class StorybookViewModel : ViewModel() {
         _isComposeCheckboxChecked.value = !isChecked
     }
 
+
+    /*****************************
+     * Labeled Checkbox
+     */
+    private val _isComposeLabeledCheckboxChecked = MutableLiveData(false)
+    val isComposeLabeledCheckboxChecked = _isComposeLabeledCheckboxChecked
+
     fun checkComposeLabeledCheckbox() {
         // LiveDatas are nullable. If null, default to false.
         val isChecked = _isComposeLabeledCheckboxChecked.value ?: false
 
         _isComposeLabeledCheckboxChecked.value = !isChecked
     }
+
+    /*****************************
+     * Switch
+     */
+    private val _isComposeSwitchChecked = MutableLiveData(false)
+    val isComposeSwitchChecked = _isComposeSwitchChecked
 
     /**
      * Toggle the switch. All observers will receive the changed
@@ -71,3 +90,5 @@ class StorybookViewModel : ViewModel() {
         _isComposeSwitchChecked.value = !isChecked
     }
 }
+
+
