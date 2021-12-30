@@ -25,6 +25,8 @@ class ButtonFragment : AppBaseFragment() {
     ): View {
         binding = FragmentButtonBinding.inflate(inflater)
 
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this    // required for fragment_button data bindings
         return binding.root
     }
 
@@ -38,12 +40,11 @@ class ButtonFragment : AppBaseFragment() {
                 ComposeButton(
                     onClick = {
                         // Most apps use ViewModels
-                        // onClick() should call a function inside the viewModel.
-                        // The ViewModel will probably do some stuff, then set a LiveData (equivalent
-                        // to Compose's MutableStates).
+                        // onClick() can call functions inside the viewModel.
                         // Activities and Fragments "observe" LiveData values changes.
                         // See setupObservers() below.
-                        viewModel.clickComposeButton()
+                        viewModel.onComposeButtonClicked()
+                        Toast.makeText(requireContext(), "ComposeButton!", Toast.LENGTH_SHORT).show()
                     },
                     shape = RoundedCornerShape(20.dp),
                     text = stringResource(id = R.string.compose_button),
@@ -60,11 +61,11 @@ class ButtonFragment : AppBaseFragment() {
     }
 
     override fun setupObservers() {
-        viewModel.onComposeButtonClicked.observe(viewLifecycleOwner) { buttonClicked ->
-            if (buttonClicked) {
-                Toast.makeText(requireContext(), "Button!", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        viewModel.onComposeButtonClicked.observe(viewLifecycleOwner) { buttonClicked ->
+//            if (buttonClicked) {
+//                Toast.makeText(requireContext(), "ViewModel observer!", Toast.LENGTH_SHORT).show()
+//            }
+//        }
     }
 }
 

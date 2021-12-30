@@ -35,4 +35,7 @@
     <string name="compose_switch_with_label">ComposeSwitchWithLabel</string>
     <string name="compose_textarea">ComposeTextarea (multiline Text)</string>
 
+    <!-- ViewModel -->
+    <string name="viewmodel_button_clicked">ViewModel: Button clicked %d times.</string>
+
 </resources>

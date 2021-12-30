@@ -1,3 +1,6 @@
+package com.example.compose.storybook.ui
+
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -7,36 +10,29 @@ class StorybookViewModel : ViewModel() {
      * MutableLiveData and LiveData values:
      *
      * The ViewModel uses _mutableLiveData vals for values the app wants to store and observe.
-     * Per Google standards, these should be private. Each one serves as a backing value for
-     * a publicly visible liveData value, which any Activity, Fragment, etc. can observe.
-     *
-     * Example:
-     *
-     * _onCustomButtonClicked is the private backing value for
-     * the public onCustomButtonClicked.
-     * Any ButtonFragment observes onCustomButtonClicked.
-     * and respond to changes (see ButtonFragment.setupObservers()).
+     * Per Google standards, these should be private backing values for corresponding
+     * public LiveData values, which any Activity, Fragment, etc. can observe.
      */
 
     /*****************************
      * Button
      */
-    private val _onComposeButtonClicked = MutableLiveData(false)
-    val onComposeButtonClicked = _onComposeButtonClicked
+    private var buttonClickCounter = 0
+    // This is bound to a TextView in fragment_button.xml
+    val buttonClickCounterString = MutableLiveData("")
 
     /**
-     * ButtonActivity observes _onComposeButtonClicked
-     * and calls this function when uses clicks the button.
+     * Called from inside ComposeButton.onClick{}
      */
-    fun clickComposeButton() {
-        _onComposeButtonClicked.value = true
+    fun onComposeButtonClicked() {
+        buttonClickCounterString.value = "ViewModel: Button click counter = ${buttonClickCounter++}"
     }
 
     /*****************************
      * TextInput
      */
     private val _textValue = MutableLiveData("")
-    val textValue = _textValue
+    val textValue: LiveData<String> = _textValue
 
     fun setTextValue(text: String) {
         _textValue.value = text
@@ -46,7 +42,7 @@ class StorybookViewModel : ViewModel() {
      * Checkbox
      */
     private val _isComposeCheckboxChecked = MutableLiveData(false)
-    val isComposeCheckboxChecked = _isComposeCheckboxChecked
+    val isComposeCheckboxChecked: LiveData<Boolean> = _isComposeCheckboxChecked
 
     /**
      * Toggle the checkbox. All observers will receive the changed
@@ -64,7 +60,7 @@ class StorybookViewModel : ViewModel() {
      * Labeled Checkbox
      */
     private val _isComposeLabeledCheckboxChecked = MutableLiveData(false)
-    val isComposeLabeledCheckboxChecked = _isComposeLabeledCheckboxChecked
+    val isComposeLabeledCheckboxChecked: LiveData<Boolean> = _isComposeLabeledCheckboxChecked
 
     fun checkComposeLabeledCheckbox() {
         // LiveDatas are nullable. If null, default to false.
@@ -77,7 +73,7 @@ class StorybookViewModel : ViewModel() {
      * Switch
      */
     private val _isComposeSwitchChecked = MutableLiveData(false)
-    val isComposeSwitchChecked = _isComposeSwitchChecked
+    val isComposeSwitchChecked: LiveData<Boolean> = _isComposeSwitchChecked
 
     /**
      * Toggle the switch. All observers will receive the changed
