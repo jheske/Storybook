@@ -17,6 +17,7 @@ import androidx.compose.ui.res.dimensionResource
 import com.example.compose.storybook.databinding.FragmentSwitchBinding
 // composables module imports
 import com.example.compose.ui.components.ComposeSwitch
+import com.example.compose.ui.components.ComposeSwitchWithLabel
 
 @AndroidEntryPoint
 class SwitchFragment : AppBaseFragment() {
@@ -75,7 +76,7 @@ class SwitchFragment : AppBaseFragment() {
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.Start,
                 ) {
-                    ComposeSwitch(
+                    ComposeSwitchWithLabel(
                         isChecked = false,
                         onCheckedChange = { isChecked ->
                             if (isChecked) {
