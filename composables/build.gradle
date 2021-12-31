@@ -54,6 +54,8 @@ dependencies {
     implementation "androidx.compose.animation:animation:$compose_material_version"
     implementation "androidx.compose.ui:ui-tooling:$compose_material_version"  // Previews, etc.
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_compose_version"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+
     // Use these last two libs if you want Compose to inherit the themes available
     // in the View system instead of rewriting your own Material theme in Compose from scratch.
     //  MDC theme
