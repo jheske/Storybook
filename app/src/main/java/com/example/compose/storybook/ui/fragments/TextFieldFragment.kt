@@ -8,16 +8,14 @@ import android.view.ViewGroup
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.input.KeyboardType
 import com.example.compose.storybook.R
 import com.example.compose.storybook.databinding.FragmentTextFieldBinding
 import com.example.compose.storybook.ui.AppBaseFragment
 import com.example.compose.storybook.ui.MainActivity
-import com.example.compose.ui.components.ComposeNumericTextInput
 import com.example.compose.ui.components.ComposeTextInput
 import com.example.udemy.compose.firstapp.ui.theme.StorybookTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -53,7 +51,17 @@ class TextFieldFragment : AppBaseFragment() {
                         value = "Initial Text",
                         onValueChange = { text ->
                             viewModel.setTextValue(text)
-                        }
+                        },
+                        /**
+                         * KeyboardType.Ascii (default)
+                         * KeyboardType.Text
+                         * KeyboardType.Number
+                         * KeyboardType.Password
+                         * KeyboardType.NumberPassword
+                         * KeyboardType.Email
+                         * KeyboardType.Uri
+                         */
+                        keyboardType = KeyboardType.Text
                     )
                 }
             }
@@ -66,11 +74,12 @@ class TextFieldFragment : AppBaseFragment() {
                     verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.Start,
                 ) {
-                    ComposeNumericTextInput(
+                    ComposeTextInput(
                         value = "0",
                         onValueChange = { text ->
                             viewModel.setTextValue(text)
-                        }
+                        },
+                        keyboardType = KeyboardType.Number
                     )
                 }
             }

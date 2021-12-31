@@ -13,9 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    companion object {
-        private val TAG = MainActivity::class.java.simpleName
-    }
 
     lateinit var binding: ActivityMainBinding
     lateinit var navController: NavController
@@ -52,7 +49,7 @@ class MainActivity : AppCompatActivity() {
             binding.appLogoImageView.visibility = View.GONE
         }
         // This is the Navigation toolbar title that shows up next to the Up button
-        // on inner pages.
+        // on inner (not Main) pages.
         binding.toolbar.title = title
     }
 }
