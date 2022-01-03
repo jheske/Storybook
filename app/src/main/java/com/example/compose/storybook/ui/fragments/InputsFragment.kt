@@ -49,11 +49,11 @@ class InputsFragment : AppBaseFragment() {
         binding.dropdownButton.setOnClickListener {
 
         }
-        binding.textFieldBUtton.setOnClickListener {
+        binding.textFieldButton.setOnClickListener {
             findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToTextFieldFragment())
         }
-        binding.phoneputButton.setOnClickListener {
-
+        binding.mcTextFieldButton.setOnClickListener {
+            findNavController().navigate(InputsFragmentDirections.actionInputsFragmentToMcTextFieldFragment())
         }
         binding.pinputButton.setOnClickListener {
 

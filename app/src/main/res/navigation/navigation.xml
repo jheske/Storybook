@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_inputsFragment_to_textFieldFragment"
             app:destination="@id/textFieldFragment" />
+        <action
+            android:id="@+id/action_inputsFragment_to_mcTextFieldFragment"
+            app:destination="@id/mcTextFieldFragment" />
     </fragment>
 
     <fragment
@@ -46,4 +49,7 @@
     <fragment
         android:id="@+id/textFieldFragment"
         android:name="com.example.compose.storybook.ui.fragments.TextFieldFragment" />
+    <fragment
+        android:id="@+id/mcTextFieldFragment"
+        android:name="com.example.compose.storybook.ui.fragments.McTextFieldFragment" />
 </navigation>

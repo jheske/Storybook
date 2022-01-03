@@ -32,8 +32,8 @@ fun ComposeTextInput(
     ) {
         TextField(
             value = text,
-            onValueChange = {textValue ->
-                text = textValue
+            onValueChange = {newValue ->
+                text = newValue
                 onValueChange.invoke(text)
             },
             label = { Text(text = label) },

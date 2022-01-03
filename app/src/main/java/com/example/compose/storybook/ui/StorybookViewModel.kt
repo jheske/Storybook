@@ -6,14 +6,6 @@ import androidx.lifecycle.ViewModel
 
 class StorybookViewModel : ViewModel() {
 
-    /**
-     * MutableLiveData and LiveData values:
-     *
-     * The ViewModel uses _mutableLiveData vals for values the app wants to store and observe.
-     * Per Google standards, these should be private backing values for corresponding
-     * public LiveData values, which any Activity, Fragment, etc. can observe.
-     */
-
     /*****************************
      * Button
      */
@@ -28,13 +20,22 @@ class StorybookViewModel : ViewModel() {
         buttonClickCountString.value = "ViewModel: Click count = ${++buttonClickCount}"
     }
 
+
     /*****************************
-     * TextInput
+     * McTextField (username)
+     */
+    var userName: String=""
+
+    fun updateUserName(text: String) {
+        userName = text
+    }
+
+    /*****************************
+     * TextField
      */
     private val _textValue = MutableLiveData("")
-    val textValue: LiveData<String> = _textValue
 
-    fun setTextValue(text: String) {
+    fun updateTextValue(text: String) {
         _textValue.value = text
     }
 
@@ -68,6 +69,19 @@ class StorybookViewModel : ViewModel() {
             "ViewModel: Click count = ${++checkboxWithLablClickCount}"
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*****************************
      * Switch
      */
@@ -80,10 +94,26 @@ class StorybookViewModel : ViewModel() {
      * Toggle the switch. All observers will receive the changed
      * value.
      */
-    fun onSwitchToggled() {
+    fun onSwitchToggled(isCheckboxChecked: Boolean) {
         switchToggleCountString.value =
-            "ViewModel: Toggle count = ${++switchToggleCount}"
+            "ViewModel: Toggle count = ${++switchToggleCount} switch toggled on: $isCheckboxChecked"
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /*****************************
      * SwitchWithLabel

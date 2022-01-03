@@ -62,7 +62,7 @@ class SwitchFragment : AppBaseFragment() {
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
-                            viewModel.onSwitchToggled()
+                            viewModel.onSwitchToggled(isChecked)
                         }
                     )
                 }

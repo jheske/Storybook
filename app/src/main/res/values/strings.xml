@@ -15,7 +15,7 @@
     <string name="checkbox">Checkbox</string>
     <string name="dropdown">Dropdown</string>
     <string name="text_field">TextField</string>
-    <string name="phoneput">Phoneput</string>
+    <string name="mctext_field">McTextField</string>
     <string name="pinput">Pinput</string>
     <string name="radio">Radio</string>
     <string name="toggle_switch">Switch</string>  <!-- "switch" seems to be a reserved word -->
@@ -28,8 +28,7 @@
     <string name="compose_dropdown">ComposeDropdown</string>
     <string name="compose_textfield">ComposeTextField</string>
     <string name="compose_numeric_textfield">ComposeNumericTextField</string>
-    <string name="compose_phoneput">ComposePinput (TextInput - Phone)</string>
-    <string name="compose_pinput">ComposePinput (TextInput - PIN)</string>
+    <string name="compose_pinput">ComposePinput (TextField - PIN)</string>
     <string name="compose_radio">ComposeRadio</string>
     <string name="compose_switch">ComposeSwitch</string>
     <string name="compose_switch_with_label">ComposeSwitchWithLabel</string>

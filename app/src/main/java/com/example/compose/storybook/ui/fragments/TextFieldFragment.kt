@@ -1,7 +1,6 @@
 package com.example.compose.storybook.ui.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,6 +16,7 @@ import com.example.compose.storybook.databinding.FragmentTextFieldBinding
 import com.example.compose.storybook.ui.AppBaseFragment
 import com.example.compose.storybook.ui.MainActivity
 import com.example.compose.ui.components.ComposeTextInput
+import com.example.compose.ui.components.McTextField
 import com.example.udemy.compose.firstapp.ui.theme.StorybookTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,8 +37,12 @@ class TextFieldFragment : AppBaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        showComposeTextField()
+        showComposeNumericTextField()
+    }
+
+    private fun showComposeTextField() {
         val composeTextField = binding.composeTextField
-        val composeNumericTextField = binding.composeNumericTextField
 
         composeTextField.setContent {
             StorybookTheme { // or AppCompatTheme or CustomTheme
@@ -50,7 +54,7 @@ class TextFieldFragment : AppBaseFragment() {
                     ComposeTextInput(
                         value = "Initial Text",
                         onValueChange = { text ->
-                            viewModel.setTextValue(text)
+                            viewModel.updateTextValue(text)
                         },
                         /**
                          * KeyboardType.Ascii (default)
@@ -66,6 +70,10 @@ class TextFieldFragment : AppBaseFragment() {
                 }
             }
         }
+    }
+
+    private fun showComposeNumericTextField() {
+        val composeNumericTextField = binding.composeNumericTextField
 
         composeNumericTextField.setContent {
             StorybookTheme { // or AppCompatTheme or CustomTheme
@@ -77,10 +85,32 @@ class TextFieldFragment : AppBaseFragment() {
                     ComposeTextInput(
                         value = "0",
                         onValueChange = { text ->
-                            viewModel.setTextValue(text)
+                            viewModel.updateTextValue(text)
                         },
                         keyboardType = KeyboardType.Number
                     )
+                }
+            }
+        }
+    }
+
+    private fun showComposeMcTextField() {
+        val composeNumericTextField = binding.composeNumericTextField
+
+        composeNumericTextField.setContent {
+            StorybookTheme { // or AppCompatTheme or CustomTheme
+                Column(
+                    modifier = Modifier.padding(dimensionResource(id = R.dimen.material_medium)),
+                    verticalArrangement = Arrangement.Top,
+                    horizontalAlignment = Alignment.Start,
+                ) {
+ //                   McTextField(
+//                        value = "0",
+//                        onValueChange = { text ->
+//                            viewModel.updateTextValue(text)
+//                        },
+//                        keyboardType = KeyboardType.Number
+    //                )
                 }
             }
         }

@@ -43,6 +43,7 @@ class ButtonFragment : AppBaseFragment() {
                         // onClick() can call functions inside the viewModel.
                         // Activities and Fragments "observe" LiveData values changes.
                         viewModel.onComposeButtonClicked()
+                       // binding.buttonCountTextView.text = "This is a button"
                         Toast.makeText(requireContext(), "ComposeButton!", Toast.LENGTH_SHORT).show()
                     },
                     shape = RoundedCornerShape(20.dp),
