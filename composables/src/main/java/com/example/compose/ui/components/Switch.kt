@@ -43,6 +43,7 @@ fun ComposeSwitch(
                 onCheckedChange.invoke(it)
             },
             enabled = true,
+
             colors = SwitchDefaults.colors(
                 uncheckedThumbColor = AppTheme.colors.switchLeverBackground,
                 uncheckedTrackColor = AppTheme.colors.switchBackgroundColor,

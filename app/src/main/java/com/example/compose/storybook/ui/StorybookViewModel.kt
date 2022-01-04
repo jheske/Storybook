@@ -69,19 +69,6 @@ class StorybookViewModel : ViewModel() {
             "ViewModel: Click count = ${++checkboxWithLablClickCount}"
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     /*****************************
      * Switch
      */
@@ -98,22 +85,6 @@ class StorybookViewModel : ViewModel() {
         switchToggleCountString.value =
             "ViewModel: Toggle count = ${++switchToggleCount} switch toggled on: $isCheckboxChecked"
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /*****************************
      * SwitchWithLabel

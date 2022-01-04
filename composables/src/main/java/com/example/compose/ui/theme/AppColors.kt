@@ -5,33 +5,55 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.graphics.Color
-import com.example.compose.ui.theme.AppThemeColors
 import com.example.compose.utils.colors
 
 class AppColors(
-    primary: Color,
-    textPrimary: Color,
-    textSecondary: Color,
-    background: Color,
-    error: Color,
+    inputActionIconColor: Color,
+    inputBackgroundColor: Color,
+    inputBorderColor: Color,
+    inputBoxShadowColor: Color,
+    inputIconColor: Color,
+    inputFocusedLabelColor: Color,
+    inputUnfocusedLabelColor: Color,
+    inputPlaceholderColor: Color,
+    inputTextColor: Color,
+    inputDisabledIconColor: Color,
+    inputDisabledLabelColor: Color,
+    inputDisabledPlaceholderColor: Color,
+    inputDisabledTextColor: Color,
     switchBackgroundColor: Color,
     switchBorderColor: Color,
     switchBoxShadowColor: Color,
     switchLeverBackground: Color,
     isLight: Boolean
 ) {
-    var primary by mutableStateOf(primary)
-        private set
-    var textSecondary by mutableStateOf(textSecondary)
-        private set
-    var textPrimary by mutableStateOf(textPrimary)
-        private set
-    var error by mutableStateOf(error)
-        private set
-    var background by mutableStateOf(background)
-        private set
-    var isLight by mutableStateOf(isLight)
+    var inputActionIconColor by mutableStateOf(inputActionIconColor)
         internal set
+    var inputBackgroundColor by mutableStateOf(inputBackgroundColor)
+        internal set
+    var inputBorderColor by mutableStateOf(inputBorderColor)
+        internal set
+    var inputBoxShadowColor by mutableStateOf(inputBoxShadowColor)
+        internal set
+    var inputIconColor by mutableStateOf(inputIconColor)
+        internal set
+    var inputFocusedLabelColor by mutableStateOf(inputFocusedLabelColor)
+        internal set
+    var inputUnfocusedLabelColor by mutableStateOf(inputUnfocusedLabelColor)
+        internal set
+    var inputPlaceholderColor by mutableStateOf(inputPlaceholderColor)
+        internal set
+    var inputTextColor by mutableStateOf(inputTextColor)
+        internal set
+    var inputDisabledIconColor by mutableStateOf(inputDisabledIconColor)
+        internal set
+    var inputDisabledLabelColor by mutableStateOf(inputDisabledLabelColor)
+        internal set
+    var inputDisabledPlaceholderColor by mutableStateOf(inputDisabledPlaceholderColor)
+        internal set
+    var inputDisabledTextColor by mutableStateOf(inputDisabledTextColor)
+        internal set
+
     var switchBackgroundColor by mutableStateOf(switchBackgroundColor)
         internal set
     var switchBorderColor by mutableStateOf(switchBorderColor)
@@ -40,50 +62,42 @@ class AppColors(
         internal set
     var switchLeverBackground by mutableStateOf(switchLeverBackground)
         internal set
-//    val SwitchCheckedBackgroundColor = Color(0x00000000)
-//    val SwitchCheckedBorderColor = Color(0xff24bc98)
-//    val SwitchCheckedBoxShadowColor = Color(0x00000000)
-//    val SwitchCheckedDisabledBackgroundColor = Color(0x00000000)
-//    val SwitchCheckedDisabledBorderColor = Color(0xffd1cccc)
-//    val SwitchCheckedDisabledBoxShadowColor = Color(0x00000000)
-//    val SwitchCheckedDisabledLeverBackground = Color(0xffd1cccc)
-//    val SwitchCheckedFocusBackgroundColor = Color(0xffd6fff0)
-//    val SwitchCheckedFocusBorderColor = Color(0xff4258ff)
-//    val SwitchCheckedFocusBoxShadowColor = Color(0x00000000)
-//    val SwitchCheckedFocusLeverBackground = Color(0xff24bc98)
-//    val SwitchCheckedLeverBackground = Color(0xff24bc98)
-//    val SwitchCheckedPressedBackgroundColor = Color(0xffd6fff0)
-//    val SwitchCheckedPressedBorderColor = Color(0xff24bc98)
-//    val SwitchCheckedPressedBoxShadowColor = Color(0x00000000)
-//    val SwitchCheckedPressedLeverBackground = Color(0xff24bc98)
-//    val SwitchDisabledBackgroundColor = Color(0x00000000)
-//    val SwitchDisabledBorderColor = Color(0xffd1cccc)
-//    val SwitchDisabledBoxShadowColor = Color(0x00000000)
-//    val SwitchDisabledLeverBackground = Color(0xffd1cccc)
-//    val SwitchFocusBackgroundColor = Color(0xfff2f2f2)
-//    val SwitchFocusBorderColor = Color(0xff4258ff)
-//    val SwitchFocusBoxShadowColor = Color(0x00000000)
-//    val SwitchFocusLeverBackground = Color(0xffb8b2b2)
-//    val SwitchLeverBackground = Color(0xffb8b2b2)
-//    val SwitchPressedBackgroundColor = Color(0xfff2f2f2)
-
+    var isLight by mutableStateOf(isLight)
+        internal set
+    
     fun copy(
-        primary: Color = this.primary,
-        textPrimary: Color = this.textPrimary,
-        textSecondary: Color = this.textSecondary,
-        error: Color = this.error,
-        background: Color = this.background,
+        inputActionIconColor: Color = this.inputActionIconColor,
+        inputBackgroundColor: Color = this.inputBackgroundColor,
+        inputBorderColor: Color = this.inputBorderColor,
+        inputBoxShadowColor: Color = this.inputBoxShadowColor,
+        inputIconColor: Color = this.inputIconColor,
+        inputFocusedLabelColor: Color = this.inputFocusedLabelColor,
+        inputUnfocusedLabelColor: Color = this.inputUnfocusedLabelColor,
+        inputPlaceholderColor: Color = this.inputPlaceholderColor,
+        inputTextColor: Color = this.inputTextColor, 
+        inputDisabledIconColor: Color = this.inputDisabledIconColor,
+        inputDisabledLabelColor: Color = this.inputDisabledLabelColor,
+        inputDisabledPlaceholderColor: Color = this.inputDisabledPlaceholderColor,
+        inputDisabledTextColor: Color = this.inputDisabledTextColor, 
         switchBackgroundColor: Color = this.switchBackgroundColor,
         switchBorderColor: Color = this.switchBorderColor,
         switchBoxShadowColor: Color = this.switchBoxShadowColor,
         switchLeverBackground: Color = this.switchLeverBackground,
         isLight: Boolean = this.isLight,
     ): AppColors = AppColors(
-        primary,
-        textPrimary,
-        textSecondary,
-        error,
-        background,
+        inputActionIconColor,
+        inputBackgroundColor,
+        inputBorderColor,
+        inputBoxShadowColor,
+        inputIconColor,
+        inputFocusedLabelColor,
+        inputUnfocusedLabelColor,
+        inputPlaceholderColor,
+        inputTextColor,
+        inputDisabledIconColor,
+        inputDisabledLabelColor,
+        inputDisabledPlaceholderColor,
+        inputDisabledTextColor,
         switchBackgroundColor,
         switchBorderColor,
         switchBoxShadowColor,
@@ -92,46 +106,58 @@ class AppColors(
     )
 
     fun updateColorsFrom(other: AppColors) {
-        primary = other.primary
-        textPrimary = other.textPrimary
-        textSecondary = other.textSecondary
-        background = other.background
-        switchBackgroundColor  = other.switchBackgroundColor
+        inputActionIconColor = other.inputActionIconColor
+        inputBackgroundColor = other.inputBackgroundColor
+        inputBorderColor = other.inputBorderColor
+        inputBoxShadowColor = other.inputBoxShadowColor
+        inputIconColor = other.inputIconColor
+        inputFocusedLabelColor = other.inputFocusedLabelColor
+        inputUnfocusedLabelColor = other.inputUnfocusedLabelColor
+        inputPlaceholderColor = other.inputPlaceholderColor
+        inputTextColor = other.inputTextColor
+        inputDisabledIconColor = other.inputDisabledIconColor
+        inputDisabledLabelColor = other.inputDisabledLabelColor
+        inputDisabledPlaceholderColor = other.inputDisabledPlaceholderColor
+        inputDisabledTextColor = other.inputDisabledTextColor
+        switchBackgroundColor = other.switchBackgroundColor
         switchBorderColor = other.switchBorderColor
         switchBoxShadowColor = other.switchBoxShadowColor
         switchLeverBackground = other.switchLeverBackground
-        error = other.error
     }
 }
 
-private val colorLightPrimary = Color(0xFFFFB400)
-private val colorLightTextPrimary = Color(0xFF000000)
-private val colorLightTextSecondary = Color(0xFF6C727A)
-private val colorLightBackground = Color(0xFFFFFFFF)
-private val colorLightError = Color(0xFFD62222)
-
-private val colorDarkPrimary = Color(0xFF0037FF)
-private val colorDarkTextPrimary = Color(0xFFFAFAFA)
-private val colorDarkTextSecondary = Color(0xFF6C727A)
-private val colorDarkBackground = Color(0xFF090A0A)
-private val colorDarkError = Color(0xFFD62222)
-
 fun lightColors(
-    primary: Color = colorLightPrimary,
-    textPrimary: Color = colorLightTextPrimary,
-    textSecondary: Color = colorLightTextSecondary,
-    background: Color = colorLightBackground,
-    error: Color = colorLightError,
+    inputActionIconColor: Color = colors.InputActionIconColor,
+    inputBackgroundColor: Color = colors.InputBackgroundColor,
+    inputBorderColor: Color = colors.InputBorderColor,
+    inputBoxShadowColor: Color = colors.InputBoxShadowColor,
+    inputIconColor: Color = colors.InputIconColor,
+    inputFocusedLabelColor: Color = colors.InputFocusLabelColor,
+    inputUnfocusedLabelColor: Color = colors.InputLabelColor,
+    inputPlaceholderColor: Color = colors.InputPlaceholderColor,
+    inputTextColor: Color = colors.InputTextColor,
+    inputDisabledIconColor: Color = colors.InputDisabledIconColor,
+    inputDisabledLabelColor: Color = colors.InputDisabledLabelColor,
+    inputDisabledPlaceholderColor: Color = colors.InputDisabledPlaceholderColor,
+    inputDisabledTextColor: Color = colors.InputDisabledTextColor, 
     switchBackgroundColor: Color = colors.SwitchBackgroundColor,
     switchBorderColor: Color = colors.SwitchBorderColor,
-    switchBoxShadowColor: Color  = colors.SwitchBoxShadowColor,
-    switchLeverBackground: Color  = colors.SwitchLeverBackground,
+    switchBoxShadowColor: Color = colors.SwitchBoxShadowColor,
+    switchLeverBackground: Color = colors.SwitchLeverBackground,
 ): AppColors = AppColors(
-    primary = primary,
-    textPrimary = textPrimary,
-    textSecondary = textSecondary,
-    background = background,
-    error = error,
+    inputActionIconColor = inputActionIconColor,
+    inputBackgroundColor = inputBackgroundColor,
+    inputBorderColor = inputBorderColor,
+    inputBoxShadowColor = inputBoxShadowColor,
+    inputIconColor = inputIconColor,
+    inputFocusedLabelColor = inputFocusedLabelColor,
+    inputUnfocusedLabelColor = inputUnfocusedLabelColor,
+    inputPlaceholderColor = inputPlaceholderColor,
+    inputTextColor = inputTextColor,
+    inputDisabledIconColor = inputDisabledIconColor,
+    inputDisabledLabelColor = inputDisabledLabelColor,
+    inputDisabledPlaceholderColor = inputDisabledPlaceholderColor,
+    inputDisabledTextColor = inputDisabledTextColor,
     switchBackgroundColor = switchBackgroundColor,
     switchBorderColor = switchBorderColor,
     switchBoxShadowColor = switchBoxShadowColor,
@@ -140,21 +166,37 @@ fun lightColors(
 )
 
 fun darkColors(
-    primary: Color = colorDarkPrimary,
-    textPrimary: Color = colorDarkTextPrimary,
-    textSecondary: Color = colorDarkTextSecondary,
-    background: Color = colorDarkBackground,
-    error: Color = colorDarkError,
-    switchBackgroundColor: Color = AppThemeColors.SwitchBackgroundColor,
-    switchBorderColor: Color = AppThemeColors.SwitchBorderColor,
-    switchBoxShadowColor: Color  = AppThemeColors.SwitchBoxShadowColor,
-    switchBoxLeverBackground: Color  = AppThemeColors.SwitchLeverBackground,
+    inputActionIconColor: Color = colors.InputActionIconColor,
+    inputBackgroundColor: Color = colors.InputBackgroundColor,
+    inputBorderColor: Color = colors.InputBorderColor,
+    inputBoxShadowColor: Color = colors.InputBoxShadowColor,
+    inputIconColor: Color = colors.InputIconColor,
+    inputFocusedLabelColor: Color = colors.InputFocusLabelColor,
+    inputUnfocusedLabelColor: Color = colors.InputLabelColor,
+    inputPlaceholderColor: Color = colors.InputPlaceholderColor,
+    inputTextColor: Color = colors.InputTextColor,
+    inputDisabledIconColor: Color = colors.InputDisabledIconColor,
+    inputDisabledLabelColor: Color = colors.InputDisabledLabelColor,
+    inputDisabledPlaceholderColor: Color = colors.InputDisabledPlaceholderColor,
+    inputDisabledTextColor: Color = colors.InputDisabledTextColor,
+    switchBackgroundColor: Color = colors.SwitchBackgroundColor,
+    switchBorderColor: Color = colors.SwitchBorderColor,
+    switchBoxShadowColor: Color = colors.SwitchBoxShadowColor,
+    switchBoxLeverBackground: Color = colors.SwitchLeverBackground,
 ): AppColors = AppColors(
-    primary = primary,
-    textPrimary = textPrimary,
-    textSecondary = textSecondary,
-    background = background,
-    error = error,
+    inputActionIconColor = inputActionIconColor,
+    inputBackgroundColor = inputBackgroundColor,
+    inputBorderColor = inputBorderColor,
+    inputBoxShadowColor = inputBoxShadowColor,
+    inputIconColor = inputIconColor,
+    inputFocusedLabelColor = inputFocusedLabelColor,
+    inputUnfocusedLabelColor = inputUnfocusedLabelColor,
+    inputPlaceholderColor = inputPlaceholderColor,
+    inputDisabledIconColor = inputDisabledIconColor,
+    inputDisabledLabelColor = inputDisabledLabelColor,
+    inputDisabledPlaceholderColor = inputDisabledPlaceholderColor,
+    inputDisabledTextColor = inputDisabledTextColor,
+    inputTextColor = inputTextColor,
     switchBackgroundColor = switchBackgroundColor,
     switchBorderColor = switchBorderColor,
     switchBoxShadowColor = switchBoxShadowColor,

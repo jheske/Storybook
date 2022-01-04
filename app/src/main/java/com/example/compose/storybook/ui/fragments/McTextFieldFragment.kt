@@ -39,23 +39,21 @@ class McTextFieldFragment : AppBaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         showMcTextField()
-
     }
 
     private fun showMcTextField() {
         val mcTextField = binding.mcTextField
 
         mcTextField.setContent {
-            McTextField2(
+            McTextField(
                 value = viewModel.userName,
                 onValueChange = { username ->
                     viewModel.updateUserName(username)
                 },
-                label = "User",
-                placeholder = "Enter user name",
-                caption = "Unique user",
-                leadingIcon = McTextFieldLeadingIcon.NONE,
-                contentType = McTextFieldContentType.CHAR_COUNT
+                label = "Label",
+                placeholder = "Placeholder",
+                caption = "Caption",
+                leadingIcon = McTextFieldLeadingIcon.PERSON,
             )
         }
     }

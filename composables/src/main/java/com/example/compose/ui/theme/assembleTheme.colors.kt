@@ -266,16 +266,18 @@ object colors {
   val InputBorderColor = Color(0xff000000)
   val InputBoxShadowColor = Color(0x00000000)
   val InputIconColor = Color(0xffa19c9c)
-  val InputLabelColor = Color(0xff383434)
+  //val InputLabelColor = Color(0xff383434)
+  val InputLabelColor = Color(0xff00FF00)
   val InputPlaceholderColor = Color(0xffa19c9c)
-  val InputTextColor = Color(0xff383434) // FIXME
+  val InputTextColor = Color(0xff383434)
 
   val InputFocusActionIconColor = Color(0xffa19c9c)
   val InputFocusBackgroundColor = Color(0xffffffff)
   val InputFocusBorderColor = Color(0xff4258ff)
   val InputFocusBoxShadowColor = Color(0x00000000)
   val InputFocusIconColor = Color(0xff4258ff)
-  val InputFocusLabelColor = Color(0xff383434)
+ // val InputFocusLabelColor = Color(0xff383434)
+  val InputFocusLabelColor = Color(0xff0000FF)
   val InputFocusPlaceholderColor = Color(0xffa19c9c)
   val InputFocusTextColor = Color(0xff383434) // FIXME
 
